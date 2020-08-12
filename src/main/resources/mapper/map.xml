@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mysh.shareHouse.repository.TestRepository">
+	<select id="findAll" resultType="com.mysh.shareHouse.model.Map">
+    select * from house
+  </select>
+  
+   <select id="findByMap" resultType="com.mysh.shareHouse.model.Map">
+    select * from house 
+    where lat <![CDATA[ > ]]> #{latMin} AND lat <![CDATA[ < ]]> #{latMax} AND lng <![CDATA[ > ]]> #{lngMin} AND lng <![CDATA[ < ]]> #{lngMax}
+  </select>
+
+</mapper>
+
+

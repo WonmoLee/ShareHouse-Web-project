@@ -1,3 +1,9 @@
+init();
+
+function init() {
+  $(".tab_box").eq(0).show();
+}
+
 $(".tab_menu_btn").on("click", function () {
   //버튼 색 제거,추가
   $(".tab_menu_btn").removeClass("on");

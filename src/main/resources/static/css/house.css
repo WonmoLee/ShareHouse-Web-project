@@ -1,0 +1,40 @@
+#Map-id img {
+	width: 230px;
+	height: 180px;
+}
+
+#house__con {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}	
+
+#Map-id {
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+	height: 200px;
+}
+
+	
+#map {
+	width: 30%;
+}
+
+.house-map{
+	margin-left: 20px;
+	margin-top: 20px;
+	border-radius: 1.5rem;
+	border: 1px solid #d4d4d4;
+	overflow: hidden;
+	
+}
+
+.house__num__area {
+	color: #fd675a;
+	font-size: 17px;
+}
+
+.house__houseform{
+	color: #a0a0a0;
+}
