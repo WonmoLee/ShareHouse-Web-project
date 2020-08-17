@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mysh.shareHouse.repository.AdminRepository">
+	<insert id="HouseDeatailSave">
+		INSERT INTO house_detail(house_num , img1 , img2 , img3 ,title ,content ,hash_tag, tourPoint , address ,gender ,contractEndDate ,maxResidencePersonnel ,
+		house_form ,construction ,drawing , tourApply ,  subway , bus ,university , mart , facilities ,
+		heal ,  create_date )
+		VALUES(#{houseNumber}, #{img1}, #{img2}, #{img3}, #{title}, #{content}, #{hashTag}, #{tourPoint}, #{address}
+		, #{gender}, #{contractEndDate}, #{maxResidencePersonnel}, #{houseForm}, #{construction}, #{drawing}
+		, #{tourApply}, #{subway}, #{bus}, #{univercity}, #{mart}, #{facilities}, #{heal}, now())
+	</insert>
+	
+	<insert id="HouseDeatailRoomSave">
+		INSERT INTO house_detail_room(house_num, roomName, gender, type, area , deposit, monthly, moveInDate ,create_date )
+		VALUES(#{houseNumber},#{roomName},#{gender},#{type},#{area},#{deposit},#{monthly},#{moveInDate}, now())
+	</insert>
+
+</mapper>
