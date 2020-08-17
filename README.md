@@ -20,6 +20,7 @@ CREATE TABLE FAQ(
 -house_detail 테이블 생성-
 CREATE TABLE house_detail(
    	id int auto_increment primary key,
+    house_num int unique,
     img1 varchar(100),
     img2 varchar(100),
     img3 varchar(100),
