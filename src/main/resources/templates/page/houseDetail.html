@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>하우스 디테일 페이지</h1>
+	<p th:text="${houseDetail.title}"></p>
+	<p th:text="${houseDetail.content}"></p>
+	<p th:text="${houseDetail.hash_tag}"></p>
+	<p th:text="${houseDetail.tourPoint}"></p>
+	<table>
+		<tr>
+			<th>주소</th>
+			<td th:text="${houseDetail.address}"></td>
+			<th>성별</th>
+			<td th:text="${houseDetail.gender}"></td>
+		</tr>
+		<tr>
+			<th>지점계약종료일</th>
+			<td th:text="${houseDetail.contractEndDate}"></td>
+			<th>최대거주인원</th>
+			<td th:text="${houseDetail.maxResidencePersonnel}"></td>
+		</tr>
+		<tr>
+			<th>주택유형</th>
+			<td th:text="${houseDetail.house_form}"></td>
+			<th>구조</th>
+			<td th:text="${houseDetail.construction}"></td>
+		</tr>
+	</table>
+
+	<img th:src="${houseDetail.drawing}" width="800px" height="900px">
+
+	<table>
+		<tr>
+			<th>이름</th>
+			<th>성별</th>
+			<th>타입</th>
+			<th>면적</th>
+			<th>보증금</th>
+			<th>월세</th>
+			<th>입주가능일</th>
+		</tr>
+		<tr th:each="houseDetailRoom : ${houseDetailRooms}">
+			<td th:text="${houseDetailRoom.roomName}"></td>
+			<td th:text="${houseDetailRoom.gender}"></td>
+			<td th:text="${houseDetailRoom.type}"></td>
+			<td th:text="${houseDetailRoom.area}"></td>
+			<td th:text="${houseDetailRoom.deposit}"></td>
+			<td th:text="${houseDetailRoom.monthly}"></td>
+			<td th:text="${houseDetailRoom.moveInDate}"></td>
+		</tr>
+	</table>
+
+	<p th:text="${houseDetail.tourApply}"></p>
+
+	<h5>서울시 서초구 서초동 기준 (예시)</h5>
+	<table>
+		<tr>
+			<th>구분</th>
+			<th>WOOZOO 쉐어하우스</th>
+			<th>원룸</th>
+			<th>오피스텔</th>
+		</tr>
+
+		<tr>
+			<td>보증금</td>
+			<td>95만원</td>
+			<td>1000만원</td>
+			<td>1000만원</td>
+		</tr>
+
+		<tr>
+			<td>임대료</td>
+			<td>39만원5천원</td>
+			<td>59만원</td>
+			<td>65만원</td>
+		</tr>
+
+		<tr>
+			<td>운영관리비</td>
+			<td>3만원</td>
+			<td>5만원</td>
+			<td>11만원</td>
+		</tr>
+
+		<tr>
+			<td>공과금</td>
+			<td>입주자간의 1/N 납부</td>
+			<td>개인 사용량에 따라 상이</td>
+			<td>개인 사용량에 따라 상이</td>
+		</tr>
+
+		<tr>
+			<td>중계수수료</td>
+			<td>없음</td>
+			<td>27.6만원 이상</td>
+			<td>30만원 이상</td>
+		</tr>
+	</table>
+	
+	<input type="hidden" id="lat" th:value="${house.lat}"/>
+	<input type="hidden" id="lng" th:value="${house.lng}"/>
+	
+	<div id="map" style="width:750px;height:450px;"></div>
+
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은키"></script>
+	<script>
+		var lat = $("#lat").val();
+		var lng = $("#lng").val();
+	
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
+			level : 2
+		// 지도의 확대 레벨
+		};
+		
+		
+
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+		// 마커가 표시될 위치입니다 
+		var markerPosition = new kakao.maps.LatLng(lat, lng);
+
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+			position : markerPosition
+		});
+
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+		
+		var zoomControl = new kakao.maps.ZoomControl();
+		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+		// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+		// marker.setMap(null);
+	</script>
+	<br/><br/><br/>
+</body>
+</html>

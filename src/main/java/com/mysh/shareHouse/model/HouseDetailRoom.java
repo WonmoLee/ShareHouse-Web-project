@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class HouseDetailRoom {
 	private int id;
-	private int houseNumber;
+	private int house_num;
 	private String roomName;
 	private String gender;
 	private String type;
@@ -21,5 +21,5 @@ public class HouseDetailRoom {
 	private String deposit;
 	private String monthly;
 	private String moveInDate;
-	private Timestamp createDate;
+	private Timestamp create_date;
 }

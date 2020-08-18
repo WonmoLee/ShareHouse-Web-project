@@ -2,6 +2,7 @@ package com.mysh.shareHouse.controller;
 
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
@@ -18,13 +19,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.mysh.shareHouse.model.Map;
+import com.mysh.shareHouse.repository.AdminRepository;
+import com.mysh.shareHouse.service.AdminService;
+import com.mysh.shareHouse.service.HouseDetailService;
 import com.mysh.shareHouse.service.MapService;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
+@RequiredArgsConstructor
 public class IndexController {
 	
-	@Autowired
-	MapService mapService;
+
+	private final MapService mapService;
+	private final HouseDetailService houseDetailService;
 	
 	@GetMapping({"", "/"})
 	public String index() {
@@ -42,27 +50,23 @@ public class IndexController {
 	}
 	
 	
-	
-	
-	@GetMapping("/test")
-	//@RequestMapping("/test")
-	//@RequestMapping(value = "/test")
-	public String test() {
-		return "/page/test";
-	}
-	
 	@GetMapping("/test/all")
-	public @ResponseBody String testAllMap() {
-		List<Map> allMaps = mapService.목록보기();	
+	public @ResponseBody String AllTest(Model model) {
+		List<Map> allMaps = mapService.목록보기();
 		ObjectMapper allMapper = new ObjectMapper(); 
-		String jsonAllList=""; 
+		String allJsonList=""; 
 		try { 
-			jsonAllList = allMapper.writeValueAsString(allMaps); 
+			allJsonList = allMapper.writeValueAsString(allMaps); 
 		} catch (Exception e) { 
 			e.printStackTrace(); 
 		}
 
-		return jsonAllList;
+		return allJsonList;
+	}
+	
+	@GetMapping("/test")
+	public String test() {
+		return "/page/test";
 	}
 	
 	@GetMapping("/test2")
@@ -76,25 +80,17 @@ public class IndexController {
 	}
 	
 	
+	@GetMapping("/insert")
+	public String insert() {
+		return "/page/test3";
+	}
+	
+	
+	
 	@GetMapping("/test/map")
 	public @ResponseBody String testMap(double latMin, double lngMin,double latMax, double lngMax) {
-		
 		//model.addAttribute("Maps", mapService.지도목록보기(latMin,lngMin,latMax,lngMax));
 		List<Map> maps = mapService.지도목록보기(latMin,lngMin,latMax,lngMax);
-		
-		
-//		String jsonStr = "";
-//		try {
-//			ObjectMapper mapper = new ObjectMapper();
-//			JSONPObject json = new JSONPObject("JSON.parse", maps);
-//			jsonStr = mapper.writeValueAsString(json);
-//			System.out.println("jsonStr : " +jsonStr);
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		String jsonMap = jsonStr.replace("JSON.parse", "Map").replace(")", "");
-		
 		ObjectMapper mapper = new ObjectMapper(); 
 		String jsonList=""; 
 		try { 
@@ -102,10 +98,19 @@ public class IndexController {
 		} catch (Exception e) { 
 			e.printStackTrace(); 
 		}
-
-		
-		
+	
 		return jsonList;
+	}
+	
+	@GetMapping("/page/houseDetail/{houseNumber}")
+	public String houseDetailPage(@PathVariable int houseNumber, Model model, Model roomModel, Model houseArea) {
+		model.addAttribute("houseDetail", houseDetailService.houseDetailView(houseNumber));
+		roomModel.addAttribute("houseDetailRooms", houseDetailService.houseDetailRoomView(houseNumber));
+		houseArea.addAttribute("house", houseDetailService.houseArea(houseNumber));
+		System.out.println(model);
+		System.out.println(roomModel);
+		System.out.println(houseArea);
+		return "/page/houseDetail";
 	}
 	
 }

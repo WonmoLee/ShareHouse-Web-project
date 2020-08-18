@@ -10,6 +10,8 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
         minLevel: 1 // 클러스터 할 최소 지도 레벨 
     });
     
+    
+    
     /* kakao.maps.event.addListener(map, 'center_changed', function() {
 
         // 지도의  레벨을 얻어옵니다
@@ -129,7 +131,7 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
     			}
     			
     			
-    			var mapItem = `<div class="house-map">`;
+    			var mapItem = `<div class="house-map" onclick="houseDetail('${res.houseNumber}')">`;
 				mapItem +=  `<div style="background-image: url('${res.imageTitle}'); background-size: 100%; width: 230px; height: 180px; ">`;
 				mapItem +=  `</div>`;
 				mapItem +=  `<div>`;
@@ -194,7 +196,7 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
 			}
 			
 			
-				var mapItem = `<div class="house-map">`;
+				var mapItem = `<div class="house-map" onclick="houseDetail('${res.houseNumber}')">`;
 				mapItem +=  `<div style="background-image: url('${res.imageTitle}'); background-size: 100%; width: 230px; height: 180px; ">`;
 				mapItem +=  `</div>`;
 				mapItem +=  `<div>`;
@@ -208,19 +210,44 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
 			
 		} 
 		
-	    
+	
 		function clusHouse(house){
 		
         var markers = $(house).map(function(i, position) {
-         //console.log(house);
-         
+ 
          return new kakao.maps.Marker({
                position : new kakao.maps.LatLng(position.lat, position.lng)
            });
 		});
-      
-
-        // 클러스터러에 마커들을 추가합니다
+     
+       
+		
+		// 클러스터러에 마커들을 추가합니다
         clusterer.addMarkers(markers);
          
 		}
+		
+//	     // 마커에 클릭이벤트를 등록합니다
+//		kakao.maps.event.addListener(markers, 'click', function() {
+//		      // 마커 위에 인포윈도우를 표시합니다
+//		      console.log("Gg"); 
+//		});
+		
+		
+//		// 마커 클러스터러에 클릭이벤트를 등록합니다
+//		
+//		kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
+//
+//	        console.log("gg");
+//	    });
+		
+		var marker = new kakao.maps.Marker({
+			  position: positions,
+			  clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+			});
+		
+		
+function houseDetail(houseNumber){
+	location.href="/page/houseDetail/"+houseNumber;
+}
+		
