@@ -1,6 +1,7 @@
 /*faq 시작*/
 
 .mains {
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   list-style: none; 

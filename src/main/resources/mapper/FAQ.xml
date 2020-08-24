@@ -4,8 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mysh.shareHouse.repository.FAQRepository">
  
- 	<select id="findAll" resultType="com.mysh.shareHouse.model.Faq">
- 		SELECT ID, TYPE, TITLE, CONTENT, CREATEDATE FROM FAQ WHERE ID = #{id}
+ 	<select id="findByMoveIn" resultType="com.mysh.shareHouse.model.Faq">
+ 		SELECT ID, TYPE, TITLE, CONTENT, CREATE_DATE FROM FAQ WHERE TYPE = "입주"
+ 	</select>
+ 	
+ 	<select id="findByContract" resultType="com.mysh.shareHouse.model.Faq">
+ 		SELECT ID, TYPE, TITLE, CONTENT, CREATE_DATE FROM FAQ WHERE TYPE = "계약"
  	</select>
  	
  	<update id="update">

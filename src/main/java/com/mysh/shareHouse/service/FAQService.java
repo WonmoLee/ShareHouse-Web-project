@@ -16,8 +16,13 @@ public class FAQService {
 	private FAQRepository faqRepository;
 	
 	@Transactional(readOnly = true)
-	public List<Faq> findAll() {
-		return faqRepository.findAll();
+	public List<Faq> findByMoveIn() {
+		return faqRepository.findByMoveIn();
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Faq> findByContract() {
+		return faqRepository.findByContract();
 	}
 	
 	@Transactional

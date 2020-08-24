@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Faq {
-
 	private int id;
 	private String type;
 	private String title;
