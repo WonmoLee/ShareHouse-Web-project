@@ -194,7 +194,7 @@ section ul {
   color: #ffffff; 
 }
 /* 로그인 페이지 css*/
- .form1 {
+ .form {
         display: grid;
         justify-content: center;
       }
