@@ -8,6 +8,21 @@ create database shareHouse;
 use shareHouse;
 
 
+-user 테이블 생성-
+create table user(
+	id int auto_increment primary key,
+    username varchar(100) not null,
+    password varchar(100) not null,
+    ph_num int not null,
+    gender char not null,
+    terms varchar(100),
+    address varchar (300) not null,
+    bank_name varchar(100) not null,
+    role_type varchar(50) not null,
+    create_date timestamp
+) engine=InnoDB default charset=utf8;
+
+
 -interview 테이블 생성-
 create table interview(
 	id int auto_increment primary key,
