@@ -145,7 +145,7 @@ insert into faq(id, type, title, content, create_date) values (15, '계약', '3.
 insert into faq(id, type, title, content, create_date) values (16, '계약', '4. 보증금은 납부하였으나 아직 입주 전 입니다. 만약 현 상황에서 계약 취소 시 어떻게 되나요?', '입주 전 계약을 해지하는 경우, 계약시작일까지 남은 기간에 따라 다른 액수의 보증금이 차감됩니다. 자세한 사항은 계약서를 참조하시기 바랍니다.', now());
 insert into faq(id, type, title, content, create_date) values (17, '계약', '5. 보증금과 월세는 얼마인가요?', '임대료는 집에 따라 다르기 때문에, 입주를 희망하시는 집의 상세 소개페이지에서 확인해주시는 것이 가장 정확합니다.
                 마찬가지로 보증금도 집에 따라 달라지며, 입주를 희망하시는 방 월세의 2개월 분 금액입니다.
-                (예를 들어 월세가 40만원인 방에 입주 하시면, 보증금은 80만원입니다.)', noew());
+                (예를 들어 월세가 40만원인 방에 입주 하시면, 보증금은 80만원입니다.)', now());
 insert into faq(id, type, title, content, create_date) values (18, '계약', '6. 단기 입주가 가능한가요?', '우주는 초기 입주 시 6개월 계약을 원칙으로 하고 있습니다. 90일 미만의 단기 입주계약은 불가하며,
                   3~6개월 사이의 계약을 원하시는 경우 실제 계약 가능 여부는 우주가 판단하여 진행합니다.', now());
 insert into faq(id, type, title, content, create_date) values (19, '계약', '7. 입주할 수 있는 나이 제한이 있나요?', '보다 빠르고 친밀한 커뮤니티 형성을 위해, 입주하시는 분들의 연령은 20세부터 41세까지로 정하고 있습니다.', now());

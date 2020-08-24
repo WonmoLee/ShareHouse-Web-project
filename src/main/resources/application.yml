@@ -9,3 +9,21 @@ spring:
     username: shareHouse
     password: bitc5600
     driver-class-name: com.mysql.cj.jdbc.Driver 
+    
+#  security:#    oauth2:#      client:#        registration:#          google:
+#            client-id: 
+#            client-secret: 
+#            scope:#            - email
+#          
+#          facebook:
+#            client-id: 
+#            client-secret: 
+#            scope:#            - email
+#            
+#          naver:
+#            client-id: 
+#            client-secret: 
+#            redirect-uri: 
+#            authorization-grant-type: 
+#            scope:#            - email
+#            provider: 
