@@ -110,21 +110,9 @@
           <h2>우주인이 들려주는 리얼 스토리!</h2>
           <div class="main_content2_list">
             <ul>
-              <li class="main_content2_list_item">
-                <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/blog4.png"></a>
-                <h4>"우주의 진짜 이야기"<br>44호점 우주인님들<img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/plus.png"></h4>
-              </li>
-              <li class="main_content2_list_item">
-                <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/blog5.png"></a>
-                <h4>"우주에서 오래 지내고싶어"<br>한*수 우주인님<img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/plus.png"></h4>
-              </li>
-              <li class="main_content2_list_item">
-                <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/blog6.png"></a>
-                <h4>"2년 4개월의 성수동 스토리"<br>서*연 우주인님<img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/plus.png"></h4>
-              </li>
-              <li class="main_content2_list_item">
-                <a href="#"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/blog1.gif"></a>
-                <h4>"우주를 추억하며"<br>이*정 우주인님<img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/plus.png"></h4>
+              <li class="main_content2_list_item" th:each="interview : ${itvList}">
+                <a th:href="${interview.URL}" target="_blank"><img th:src="${interview.img}"></a>
+                <h4 th:text="${interview.title}"><img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/main_contents/plus.png"></h4>
               </li>
             </ul>
           </div>

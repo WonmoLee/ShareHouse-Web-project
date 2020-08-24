@@ -2,6 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mysh.shareHouse.repository.InterviewRepository">
- 
+<mapper namespace="com.mysh.shareHouse.repository.ItvRepository">
+
+	<select id="findAll" resultType="com.mysh.shareHouse.model.Interview">
+ 		SELECT ID, URL, IMG, TITLE, CREATE_DATE FROM INTERVIEW
+ 	</select>
+
 </mapper>  
