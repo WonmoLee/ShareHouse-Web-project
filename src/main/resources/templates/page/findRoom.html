@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=665f48586b71153cf2cb6f0b25c7077b"></script>
+	<link rel="stylesheet" type="text/css" href="/css/mysh1.css">
+</head>
+<body>
+<th:block th:replace="layout/header"></th:block>
+	<section>
+          <div class="findRoom">
+              <div class="findRoom_houseList">
+              <div class="findRoom_houseList_nav">
+                  <img src="https://s3.ap-northeast-2.amazonaws.com/woozoo/layout_images/house/w-filter-icon.png">
+                  <input type="text" placeholder="위치, 지하철역, 학교명">
+              </div>
+              <div>
+                    <h3></h3>
+                    <ul>
+                        <li>
+                            <img>
+                        </li>
+                    </ul>
+              </div>
+            </div>
+            <div id="map" class="findRoom_map">
+            
+            </div>
+          </div>
+    </section>
+<script type="text/javascript" src="/js/Map.js"></script>
+</body>
+</html>

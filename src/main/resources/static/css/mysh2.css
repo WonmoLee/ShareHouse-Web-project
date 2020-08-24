@@ -1,0 +1,409 @@
+.tab_menu_container button {
+  background-color: lightgray;
+  border: 0;
+  outline: 0;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: 50px
+}
+
+
+.tab_menu_container {
+  display: flex;
+  justify-content: center;
+}
+
+.tab_box_container {
+  padding: 32px;
+}
+
+.tab_box.on {
+  padding-top: 30px;
+}
+
+.tab_box_first {
+  text-align: center;
+}
+
+.tab_box_mid h3 {
+  text-align: center;
+}
+
+.tab_box_mid {
+  display: flex;
+  justify-content: center;
+}
+
+.tab_box_mid2 {
+  display: flex;
+  justify-content: center;
+}
+
+.tab_box_bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.tab_box_bottom2 {
+  text-align: center;
+}
+
+.tab_menu_btn {
+  width: 300px;
+  height: 68px;
+  transition: 0.3s all;
+}
+
+.tab_menu_btn.on {
+  background-color: rgb(255, 245, 172);
+  font-weight: 700;
+  color: #df0000;
+}
+
+.tab_box_bottom_box {
+  background-color: rgb(255, 245, 172);
+  height: 180px;
+  text-align: center;
+}
+
+.tab_box_bottom_box h1 {
+  padding: 48px 0px;
+}
+
+.tab_menu_btn:hover {
+  color: #df0000;
+}
+
+.tab_box {
+  display: none;
+  padding: 20px;
+}
+
+#table__move__in {
+  width: 160px;
+  border-spacing: 15px;
+  text-align: center;
+}
+
+#table__move__in img {
+  width: 150px;
+  height: 150px;
+}
+.gird-container-TB {
+  border-top: 1px solid black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "aside content";
+  grid-template-rows: 60px 1fr 50px;
+  grid-template-columns: 500px 300px;
+  height: 330px;
+
+  margin-top: 15px;
+  /* transform: translate(50%, 50%); */
+}
+
+.grid-item {
+  padding: 10px;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.content {
+  grid-area: content;
+}
+
+.content img {
+  width: 300px;
+  height: 200px;
+}
+
+.aside img {
+  width: 300px;
+  height: 200px;
+}
+
+#tab__two {
+  text-align: center;
+}
+
+.tab-two-con {
+  display: inline;
+  align-content: center;
+}
+
+.image.fit {
+  display: block;
+  margin: 0 0 2rem 0;
+  width: 100%;
+}
+
+.image.fit img {
+  width: 80%;
+}
+
+.tab_box_bottom2 {
+  font-weight: bold;
+}
+
+.tab_box_bottom2 p span {
+  color: red;
+}
+
+#table__move__in h5 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tab_box_first h1 {
+  font-weight: bold;
+  font-size: 40px;
+  color: #fe605c;
+}
+
+.align-center h2 {
+  font-size: 30px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.thumbnails .box {
+  padding: 20px;
+}
+
+.thumbnails .box {
+  width: 200px;
+}
+
+.thumbnails img {
+  width: 90%;
+}
+
+.tab_box_title_box {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 245, 172);
+  text-align: center;
+}
+
+.box-three-dis {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.box-three-dis img {
+  width: 100%;
+  height: 130px;
+}
+
+.box-three-dis .box {
+  
+  margin: 0px 10px;
+}
+
+.tab__three__main img {
+  width: 100%;
+}
+
+.Consignment-header {
+  background-image: url("../img/headerbackground.png");
+  text-align: center;
+  background-size: 100%
+}
+
+.Consignment-header p {
+  font-size: 42px;
+  font-weight: 600;
+  font-family: fantasy;
+  padding-top: 60px;
+  margin-top: 0;
+}
+
+.Consignment-header button {
+  background-color: black;
+  color: white;
+  font-size: 23px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin-bottom: 60px;
+  border-radius: 100px;
+  width: 230px;
+  height: 40px;
+}
+
+.Consignment-header button:hover {
+  background-color: white;
+  color: black;
+}
+
+.Consignment-header-mid {
+  text-align: center;
+}
+
+.Consignment-header-mid p {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.Consignment-header-mid h5 {
+  display: inline-block;
+  font-size: 23px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 10px solid #f4afb6;
+  margin-bottom: -1px;
+}
+
+.Consignment-header-mid img {
+  width: 60%;
+}
+
+.Consignment-mid {
+  display: flex;
+  justify-content: center;
+}
+
+.Consignment-left img {
+  width: 100%;
+  padding: 50px 0 30px 0;
+}
+
+.Consignment-right-top p {
+  padding-top: 120px;
+  font-size: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #454545;
+}
+
+.Consignment-right-top p > span {
+  font-weight: bold;
+}
+
+.Consignment-right-bottom p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 30px;
+  font-size: 18px;
+}
+
+.Consignment-mid {
+  background-color: #fafafa;
+}
+
+.Consignment-mid-bottom-title {
+  text-align: center;
+}
+
+.Consignment-mid-bottom-title p {
+  font-size: 23px;
+  counter-reset: #454545;
+  padding-top: 100px;
+}
+
+.Consignment-mid-bottom-title h2 {
+  font-size: 34px;
+}
+
+.Consignment-bottom {
+  background-color: #f0f0f0;
+  margin-bottom: 200px;
+}
+
+.Consignment-bottom-title {
+  text-align: center;
+}
+
+.Consignment-bottom-title p {
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 100px;
+}
+
+.Consignment-bottom-input {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.Consignment-bottom-btn {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.Consignment-bottom-btn button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin-bottom: 60px;
+  border-radius: 100px;
+  background-color: #ff4040;
+  color: white;
+  width: 180px;
+  height: 40px;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.Consignment-bottom-btn button:hover {
+  background-color: black;
+}
+
+.Consignment-bottom-input input {
+  text-align: center;
+  border-width: 0 0 2px 0;
+  background-color: #f0f0f0;
+  border-style: solid;
+  border-color: black;
+  outline: 0;
+  width: 422px;
+  height: 36px;
+  font-size: 20px;
+}
+
+.Consignment-bottom-input input:focus {
+  background-color: #ffecec;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: rgba(255, 64, 64, 1);
+  outline: 0;
+  width: 422px;
+  height: 36px;
+  font-size: 20px;
+}
+
+.Consignment-mid-bottom-content svg {
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+  margin-right: 23px;
+  fill: red;
+  
+}
+
+.Consignment-mid-bottom-content {
+  display: flex;
+  justify-content: center;
+}
+
+.Consignment-mid-bottom-content-bottom h5 {
+  font-size: 20px;
+  margin-top: 19px;
+  margin-bottom: 8px;
+}
+
+.Consignment-mid-bottom-content-bottom p {
+  font-size: 15px;
+}
+
+.Consignment-mid-bottom-content-top1 svg {
+  margin-left: 100px;
+}

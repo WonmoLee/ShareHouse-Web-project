@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셰어하우스 우주(WOOZOO)</title>
+   
+    <link rel="stylesheet" type="text/css" href="/css/mysh3.css">
+</head>
+
+  <body>
+ <th:block th:replace="layout/header"></th:block>
+    <main id ="login__main">
+      <section class="form">
+        <div class="join__box">
+          <div class="join__title"><b>내 월세를 아껴줄 </b></div>
+          <div class="join__title2">
+            <b> 셰어하우스 우주</b>
+          </div>
+          <div>
+            <div class="email__check">
+              <input
+                type="text"
+                name="email_id"
+                value=""
+                class="text-input email-input"
+                
+              />
+              <span class="email-text">@</span>
+              <input
+                type="email"               
+                name="email_addr"
+                value=""
+                class="text-input email-input"
+              /><br />
+            </div>
+            <input
+              placeholder="* 비밀번호 (8자리 이상)"
+              class="text-input1"
+              required="required"
+              type="password"
+              name="user[password]"
+              id="user_password"
+            />
+            <div id="btn__goup">
+              <button class="btn1" type="submit">이 정보로 로그인</button>
+              <button class="btn2" type="submit">이 정보로 회원가입</button>
+            </div>
+          </div>
+          <div class="text__notice">
+            <span style="color: black;"> SNS 로그인 서비스 운영을 중단</span
+            >합니다
+            <div>SNS 로그인 이용자는 '가입하셨던 이메일' 을 입력하여</div>
+            <div>추가 로그인 정보를 등록 후 이용해주세요 (최초 1회 입력)</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

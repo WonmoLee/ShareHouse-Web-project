@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/css/mysh1.css">
+	<link rel="stylesheet" type="text/css" href="/css/mysh2.css">
+</head>
+<body>
+<th:block th:replace="layout/header"></th:block>
+    <div class="tab_wrap">
+      <div class="tab_menu_container">
+        <button class="tab_menu_btn on" type="button">입주 절차</button>
+        <button class="tab_menu_btn" type="button">우주 문화</button>
+        <button class="tab_menu_btn" type="button">서비스 및 제휴 혜택</button>
+      </div>
+
+      <!--  1페이지 시작-->
+      <div class="tab_box_container">
+        <div class="tab_box on">
+          <div class="tab_box_first">
+            <h1>우주인을 찾습니다.</h1>
+            <p>
+              경쟁에서 벗어나 함께 공유하는 삶을 살며, 남에게 의지하기 보다는
+              진취적으로 문제를 해결하고, <br />새로운 문화 속에서 일상을 탈피한
+              재미를 느껴보고 싶은 분이라면! 지금 우주인이 되어보세요!
+            </p>
+          </div>
+          <br /><br />
+
+          <div class="tab_box_mid">
+            <h3>입주 프로세스</h3>
+          </div>
+          <div class="tab_box_mid2">
+            <table id="table__move__in">
+              <tr>
+                <td>
+                  <img src="/img/img_process1.png" />
+                  <h5>1. 입주신청</h5>
+                  <p>홈페이지 또는 모바일을 통해 작성해주세요</p>
+                </td>
+
+                <td>
+                  <img src="/img/img_process2.png" />
+                  <h5>2. 접수문자 확인</h5>
+                  <p>신청이 완료되면 접수 확인문자가 발송됩니다.</p>
+                </td>
+
+                <td>
+                  <img src="img/img_process3.png" />
+                  <h5>3. 하우스투어</h5>
+                  <p>희망지점을 방문해보고 간단한 인터뷰를 합니다.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="img/img_process4.png" />
+                  <h5>4. 계약서 작성</h5>
+                  <p>하우스투어 후 희망 시 계약서 작성까지 바로 가능합니다.</p>
+                </td>
+
+                <td>
+                  <img src="img/img_process5.png" />
+                  <h5>5. 보증금/월세 납부</h5>
+                  <p>기간 내에 보증금과 월세를 납부해야 계약이 완료됩니다.</p>
+                </td>
+
+                <td>
+                  <img src="img/img_process6.png" />
+                  <h5>6. 오리엔테이션</h5>
+                  <p>입주 후 셰어하우스 생활에 대한 안내를 듣게 됩니다.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br /><br />
+
+          <div class="tab_box_bottom">
+            <h3>안내사항</h3>
+          </div>
+          <div class="tab_box_bottom2">
+            <p>
+              입주신청은 현재 공실이거나 계약종료 <span>두 달 전</span>인 방의
+              신청만 받습니다.
+            </p>
+            <br />
+            <p>
+              신규지점의 경우 신청서 작성 시 하우스투어 일정을 선택할 수 있으며,
+              <br />
+              기존지점의 경우 신청 후 2일 이내에 담당자 연락을 통해서
+              조율가능합니다.
+            </p>
+            <br />
+            <p>
+              보증금은 계약서 <span>작성 후 2일 이내,</span> 월세는
+              <span>입주 2일 전</span>까지 납부하셔야 합니다. <br />
+              보증금 납부 후 입주를 취소하실 경우, 보증금의 50%만 반환됩니다.
+            </p>
+            <br />
+            <p>
+              계약기간 만료 이전에 중도퇴실할 경우 보증금에서
+              <span>위약금 30만원</span>이 차감됩니다.
+            </p>
+          </div>
+          <div class="tab_box_bottom_box">
+            <h1>
+              이제, 함께라서 더욱 즐거운<br />
+              WOOZOO LIFE를 즐겨보세요!
+            </h1>
+          </div>
+        </div>
+        <!--  1페이지 끝-->
+
+        <!--  2페이지 시작-->
+        <div class="tab_box" id="tab__two">
+          <section id="one" class="wrapper style2">
+            <div class="inner">
+              <div class="align-center">
+                <h2>오리엔테이션</h2>
+              </div>
+              <div class="box">
+                <div class="/img fit">
+                  <img src="img/ori.png" alt="" />
+                </div>
+                <div class="content">
+                  <p>
+                    우주에서는 우주인들의 편리하고 즐거운 셰어라이프를 위해 우주
+                    오리엔테이션을 실시합니다. <br />
+                    우주에서 지켜야 할 생활규칙,청소규칙, 지점별 규칙 등을
+                    안내받고, <br />
+                    우주인들만 누릴 수 있는다양한 서비스와 문화를 소개하는
+                    자리입니다.<br />
+                    함께 살게 될우주인들과 인사도 나누고 우주 생활에 대한 다양한
+                    정보를 얻을 수 있는 자리니 꼭 참석해주셔야겠죠?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <br />
+
+          <section id="one" class="wrapper style2">
+            <div class="inner">
+              <div class="align-center">
+                <h2>친해지길 바래</h2>
+              </div>
+              <div class="box">
+                <div class="/img fit">
+                  <img src="img/tea.png" alt="" />
+                </div>
+                <div class="content">
+                  <p>
+                    아무리 바빠도 한 달에 한 번은 다함께 모여 밥도 먹고
+                    이야기해야 진짜 '가족'이지 않을까요? <br />
+                    치킨도 좋고, 영화도 좋고, 커피도 좋고 뭐든 좋습니다!<br />
+                    한 달에 한번쯤은 우주가 소정의 커뮤니티 지원금을
+                    드리니까요!<br />
+                    함께 사는 우주인 4명 이상이 한 자리에 모이게 될 경우
+                    '친해지길 바래'를 이용해보세요.<br />
+                    SNS에 #셰어하우스우주와 #친해지길바래를 소개해 주시는 센스는
+                    필수랍니다
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <br />
+
+          <section id="one" class="wrapper style2">
+            <div class="inner">
+              <div class="content">
+                <div class="align-center">
+                  <h2>우주인 인터뷰</h2>
+                </div>
+                <div class="box">
+                  <div class="/img fit">
+                    <img src="img/inter.png" alt="" />
+                  </div>
+
+                  <p>
+                    우주에서는 한 달에 한 번! 우주인 혹은 우주인들을 선정하여
+                    인터뷰를 진행합니다. <br />
+                    대상자 선정은 다양한 기준으로 선정되며, 우주인 동의를 얻은
+                    후에 인터뷰를 실시한답니다.<br />
+                    인터뷰 내용은 우주의 공식 SNS 및 다양한 채널에도 공유되어,
+                    다른 우주인들이 어떻게 살아가는지 다함께 듣고, 보고, 느낄 수
+                    있답니다.<br />
+                    물론 인터뷰를 해주신 우주인에게는 우주에서 준비한 특별한
+                    선물이 마련돼있으니 기대해주셔도 좋아요!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <br />
+
+          <section id="one" class="wrapper style2">
+            <div class="inner">
+              <div class="align-center">
+                <h2>우주인 연말파티</h2>
+              </div>
+              <div class="box">
+                <div class="/img fit">
+                  <img src="img/par.png" alt="" />
+                </div>
+                <div class="content">
+                  <p>
+                    일 년에 딱 한번! 연말이 되면 우주인들을 위한 특별한 파티가
+                    우주인들을 기다리고 있습니다.<br />
+                    다른 우주 하우스와 우주인들의 다양한 이야기를 들을 수 있는
+                    자리인 만큼 어떤 이야기를 해도 고개를 끄덕이게 될 그런
+                    시간!<br />
+                    맛있는 음식과 즐거운 게임은 우주에서 준비할테니 이날 만큼은
+                    신나게 노시면 됩니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!--  2페이지 끝-->
+
+        <div class="tab_box">
+          <div class="tab__three">
+            <div class="tab__three__main">
+              <img src="img/service_title.png" />
+            </div>
+
+            <div class="tab_box_title_box">
+              <h3>우주인 기본 제공 서비스</h3>
+            </div>
+            <br /><br />
+            <div class="thumbnails">
+              <div class="box">
+                <img src="img/wifi.png" alt="" />
+                <div class="inner">
+                  <h3>와이파이</h3>
+                  <p>
+                    와이파이 없이 못사는 스마트한 여러분을 위해 빵빵 터지는
+                    와이파이를 설치해드립니다. WOOZOO하우스에서도 스마트한
+                    라이프를 즐겨보세요!
+                  </p>
+                </div>
+              </div>
+
+              <div class="box">
+                <img src="img/cleaning.png" alt="" />
+                <div class="inner">
+                  <h3>정기청소 서비스</h3>
+                  <p>
+                    아무리 열심히 청소해도 해결되지 못하던 곳! 믿음직한
+                    전문가분들이 우주하우스의 공용공간을 정기적으로
+                    청소해드립니다. WOOZOO하우스에서는 청결한 일상을 누리세요!
+                  </p>
+                </div>
+              </div>
+
+              <div class="box">
+                <img src="img/bug.png" alt="" />
+                <div class="inner">
+                  <h3>방역서비스</h3>
+                  <p>
+                    쾌적하고 깨끗한 주거 환경을 지키기 위해! 해충구제 전문
+                    업체의 방역서비스가 제공됩니다. WOOZOO에서 건강한
+                    셰어라이프를 누려보세요!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <br /><br />
+
+            <div class="tab_box_title_box">
+              <h3>지구인&우주인 제휴 혜택</h3>
+            </div>
+            <br /><br />
+
+            <div class="box-three-dis">
+              <div class="box">
+                <img src="img/miniray.png" alt="" />
+                <div class="inner">
+                  <h1>미니레이</h1>
+                  <p>
+                    컴팩트하지만 생생한 화질의 영상을 감상할 수 있는 휴대형
+                    미니빔입니다.<br /><br />
+                    우주인 28% 할인<br />
+                    지구인 28% 할인
+                  </p>
+                </div>
+              </div>
+              <div class="box">
+                <img src="img/tutoring.png" alt="" />
+                <div class="inner">
+                  <h1>튜터링</h1>
+                  <p>
+                    전화영어보다 편하고 저렴하게 일상 속 영어회화 및 영어토픽을
+                    즐기는 앱 입니다.<br /><br />
+                    우주인&지구인 대상<br />
+                    FREEPASS 15분 2회 수강권 제공
+                  </p>
+                </div>
+              </div>
+            </div>
+            <br /><br />
+
+            <div class="box-three-dis">
+              <div class="box">
+                <img src="img/e_brick_coffee.png" alt="" />
+                <div class="inner">
+                  <h1>이브릭커피</h1>
+                  <p>
+                    연남동에 위치한 카페로 '솔트커피' '비엔나커피'가 유명한
+                    곳입니다.<br /><br />
+                    우주인 30% 할인<br />
+                    우주인 50% 할인<br />
+                    (*연남동 53호점 입주자만 해당)
+                  </p>
+                </div>
+              </div>
+              <div class="box">
+                <img src="img/CBI.png" alt="" />
+                <div class="inner">
+                  <h1>CBI(셰어베딩)</h1>
+                  <p>
+                    항상 새 것 같은 침구교체 서비스 이사 짐 간소화와 청결한
+                    침구를 유지, 3회 교체한 침구는 필요한 곳에 기증이됩니다.<br /><br />
+                    월 1회 교체 서비스 : 19,000원/월<br />
+                    월 2회 교체 서비스 : 29,000원/월<br />
+                    장기 이용권 구매시 10% 또는 15% 할인<br />
+                    제휴업체는 무료배송<br />
+                    배송희망일 적는 곳에 “우주”라고 명시 시 한달 무료 추가
+                  </p>
+                </div>
+              </div>
+            </div>
+            <br /><br />
+
+            <div class="box-three-dis">
+              <div class="box">
+                <img src="img/matazoo_navy.png" alt="" />
+                <div class="inner">
+                  <h1>마타주</h1>
+                  <p>
+                    직접 방문해서 픽업해가는 “짐보관 서비스”<br />
+                    우주인 1box 당 5,000원 할인 쿠폰<br />
+                    쿠폰코드는 우주본사로 문의바람
+                  </p>
+                </div>
+              </div>
+              <div class="box">
+                <img src="img/hotel_the_designers.png" alt="" />
+                <div class="inner">
+                  <h1>호텔 더 디자이너스</h1>
+                  <p>
+                    차별화된 디자인의 복합문화공간입니다.<br /><br />
+                    우주인 프로모션가<br />
+                    주중<br />
+                    Deluxe Double Room 80,000<br />
+                    Designer Suite Room 130,000<br />
+                    주말<br />
+                    Deluxe Double Room 100,000<br />
+                    Designer Suite Room 150,000
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tab_box_container e -->
+    </div>
+    <script src="/js/MoveInGuide.js"></script>
+  <th:block th:replace="layout/footer"></th:block>
+</body>
+</html>

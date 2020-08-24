@@ -1,69 +1,54 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-}
-.nav__faq {
-  display: grid;
-  grid-template-columns: auto auto;
-  font-size: 25px;
-  background: #aaa;
-  height: 80px;
-}nav
-.logo1 {
-  display: inline-block;
-}
+
+/*faq 시작*/
+
 .mains {
   display: flex;
   justify-content: center;
+  list-style: none; 
 }
 
 .sectionn {
-  display: block;
   justify-content: center;
   width: 1200px;
-  height: 100vh;
   margin-top: 3rem;
-  background: lightgray;
+  background: white;
 }
 
 .tab__title {
-  display: flex;
-  height: 4.5rem;
+  display: grid;
+  grid-template-columns: auto auto;
   line-height: 4.5rem;
-  border-width: 0 1px;
-  border-style: solid;
-  border-color: white;
+  grid-column-gap:0.5rem;
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
   text-align: center;
+   padding: 0px;
+   margin: 0px;
+ 
 }
 .tab__title .faq1,
 .tab__title .faq2 {
   background-color: #fe605c;
-  flex: 1;
-  border-width: 0 1px;
-  border-style: solid;
+  
 }
+
 .tab__title .faq2 {
   background-color: #d9d9d9;
 }
-.faq__list {
-  display: flex;
-  height: 100vh;
-}
+ 
+
 .faq__faq {
   background-color: white;
   color: #010001;
-  font-size: 1.5rem;
+  font-size: 1.5rem;  
 }
+                                                    
 details {
   width: 1200px;
-  display: grid;
-  margin: 1rem;
   margin-top: 1rem;
 }
+
 details > summary::-webkit-details-marker {
   display: none;
 }
@@ -76,7 +61,10 @@ summary {
   cursor: pointer;
   background-color: #ffffff;
   padding: 1.5rem;
+  font-size: 1rem;
+  font-style: bold;
 }
+
 .faq__answer {
   border: 1px;
   border-style: solid;
@@ -85,7 +73,7 @@ summary {
   background-color: #f9f9f9;
   padding: 2rem;
 }
-
+                                           /*faq 페이지끝*/
 .nav__service {
   display: grid;
   width: 100%;
@@ -101,18 +89,18 @@ summary {
   font-size: 23px;
   margin: 22px 0 0 325px;
 }
+
 .menu ul {
   margin: 15px 470px 0 0;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 30px;
-  list-style-type: none;
   font-size: 16px;
   padding: 10px 0;
   text-decoration: none;
   color: #d9d9d9;
-
 }
+
 li a:hover{
  color: #e64e5d;
  cursor: pointer;
@@ -126,7 +114,7 @@ li a:hover{
   display: block;
   height: 559px;
   border-top: 1px solid #dddddd;
-  background-image: url(img/main.png);
+  background-image: url("/img/serviceInfoMain.png");
 
 }
 main section {
@@ -139,7 +127,6 @@ section ul {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
-  list-style-type: none;
   grid-gap: 10px;
   font-size: 25px;
   line-height: 1.9em;
@@ -163,15 +150,14 @@ section ul {
   width: 980px;
   background: #f8f8f8;
   padding: 20px 20px 4px 20px;
-  list-style-type: NONE;
 }
 .sec__img1 {
-  background-image: url(img/lease.png);
+  background-image: url("/img/lease.png");
   width: 315px;
   height: 215px;
 }
 .sec__img2 {
-  background-image: url(img/consign.png);
+  background-image: url("/img/consign.png");
   width: 315px;
   height: 215px;
 }
@@ -191,7 +177,7 @@ section ul {
   font-weight: bold;
 }
 .card__content1 {
-  color: #202020
+  color: #202020;
   font-size: 17px;
   margin: 10px 0 0 7px;
 }
@@ -205,4 +191,73 @@ section ul {
   line-height: 1.5rem;
   cursor: pointer;
   border-radius: 20px;
-  color: #ffffff;
+  color: #ffffff; 
+}
+/* 로그인 페이지 css*/
+ .form {
+        display: grid;
+        justify-content: center;
+      }
+      .join__box {
+        width: 450px;
+        height: 550px;
+        padding: 62px 58px 0 58px;
+        background-color: #ffffff;
+        position: relative;
+        top: 50px;
+        border-radius: 0.5vw;
+        box-shadow: 0 0 26px 0px rgba(19, 19, 19, 0.2);
+      }
+      .join__title,
+      .join__title2 {
+        color: red;
+        font-size: 20px;
+      }
+      .join__title2 {
+        color: black;
+        margin-bottom: 2.5rem;
+      }
+
+      .email__check {
+        margin-bottom: 1rem;
+      }
+      .text-input,
+      .text-input1 {
+        width: 200px;
+        height: 33px;
+        border-radius: 0.5vw;
+        border-width: 0.1px;
+        border-style: solid;
+        border-color: #a6a6a6;
+      }
+
+      .email-text {
+        color: #a6a6a6;
+      }
+
+      .text-input1 {
+        width: 435px;
+        margin-bottom: 1.8rem;
+      }
+
+      #btn__goup button {
+        width: 215px;
+        height: 37px;
+        border-radius: 0.4vw;
+        border: 0.5px;
+        background: #da553b;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 50px;
+      }
+
+      .text__notice {
+        text-align: start;
+        color: #ced4da;
+        font-size: 15px;
+        margin-left: 5px;
+      }
+       #login__main { 
+        width: 1903px;
+        height: 708px;
+      }

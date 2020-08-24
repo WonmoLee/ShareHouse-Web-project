@@ -4,27 +4,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon"/>
-<link rel="stylesheet" type="text/css" href="/css/mysh.css">
-<link rel="stylesheet" href="/css/JIH.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/headerfooter.css">
 <title layout:title-pattern="$CONTENT_TITLE :: $DECORATOR_TITLE">mySh</title>
 </head>
 <header>
-    <h1><a href="#"><img class="mainLogo" src="img/logo.png"></a></h1>
-    <nav>
-      <ul>
-        <a href="#"><li>방 찾기</li></a>
-        <a href="#"><li>입주안내</li></a>
-        <a href="#"><li>FAQ</li></a>
-        <a href="#"><li>집 내놓기</li></a>
-      </ul>
-    </nav>
-    <nav class="nav2">
-      <ul>
-        <a href="#"><li>로그인 및 회원가입</li></a>
-        <a href="#"><li>운영주회원가입</li></a>
-      </ul>
-    </nav>
-</header>
+      <h1><a href="/"><img class="mainLogo" src="/img/logo.png"></a></h1>
+      <nav>
+        <ul>
+          <li><a href="/findRoom"><span>방 찾기</span></a></li>
+          <li><a href="/moveInGuide"><span>입주안내</span></a></li>
+          <li><a href="/faq/living"><span>FAQ</span></a></li>
+          <li><a href="/putOutRoom/info"><span>집 내놓기</span></a></li>
+        </ul>
+      </nav>
+      <nav class="nav2">
+        <ul>
+          <li><a href="/login">로그인 및 회원가입</a></li>
+          <li><a href="">운영주회원가입</a></li>
+        </ul>
+      </nav>
+    </header>
 </html>

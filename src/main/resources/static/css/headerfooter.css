@@ -1,0 +1,87 @@
+/* 怨듯넻 */
+li, a{
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
+/* �뿤�뜑 */
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: rgb(217, 217, 217);
+}
+
+header h1 {
+  padding-left: 200px;
+}
+
+header ul {
+  display: flex;
+}
+
+header ul li {
+  padding: 20px 50px 0 50px;
+}
+
+.mainLogo {
+  /* padding-left: 100px; */
+  width: 100px;
+  height: 40px;
+}
+
+.LoginAndJoin_Nav {
+  padding-right: 51px;
+}
+
+/* �뫖�꽣 */
+footer {
+  padding-left: 400px;
+  padding-right: 400px;
+  background-color: #333333;
+  color: rgb(139, 135, 135);
+}
+
+footer div img {
+  padding: 6px 0 0 40px;
+}
+
+.footer_info1 {
+  display: flex;
+}
+
+.footer_info1 ul {
+  display: flex;
+}
+
+.footer_info1 ul li {
+  padding: 0 10px 0 10px;
+  color: rgb(214, 206, 206);
+}
+
+.footer_info2 {
+  display: flex;
+  font-size: 13px;
+}
+
+.footer_r1 {
+  margin-left: 360px;
+  font-size: 27px;
+  border: 2px solid;
+  border-color: rgb(214, 206, 206);
+  border-radius: 1em;
+}
+
+.footer_r2 {
+  display: flex;
+  margin-left: 460px;
+}
+
+.footer_r2 img {
+  width: 40px;
+  height: 40px;
+}
