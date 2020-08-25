@@ -10,15 +10,17 @@ spring:
     password: bitc5600
     driver-class-name: com.mysql.cj.jdbc.Driver 
     
-#  security:#    oauth2:#      client:#        registration:#          google:
-#            client-id: 
-#            client-secret: 
-#            scope:#            - email
-#          
-#          facebook:
-#            client-id: 
-#            client-secret: 
-#            scope:#            - email
+  security:    oauth2:      client:        registration:          google:
+            client-id: 1018692780930-nqdmgp2533nmue5o3doi9erbhhlfm68i.apps.googleusercontent.com
+            client-secret: 34LN6Hqm2eFQL-258hCs1l6R
+            scope:            - email
+            - profile
+          
+          facebook:
+            client-id: 320469892500773
+            client-secret: cb2b601b648074a6cdbed9e78e3c3f94
+            scope:            - email
+            - public_profile
 #            
 #          naver:
 #            client-id: 

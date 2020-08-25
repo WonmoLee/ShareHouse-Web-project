@@ -261,3 +261,16 @@ section ul {
         width: 1903px;
         height: 708px;
       }
+      
+      .social_login {
+      	display: flex;
+      	padding-top: 60px;
+      }
+      
+      .googleLogin {
+      	padding-right: 40px;
+      }
+      
+      .facebookLogin a img {
+      	padding-top: 7px;
+      }
