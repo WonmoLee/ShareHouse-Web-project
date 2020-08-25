@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/house.css">
+ 
+    <title>Document</title>
+  </head>
+  <body>
+  	<div id=house__con>
+  	<div id="Map-id" ></div>
+  	
+    <div id="map" style="width: 650px; height: 750px;"></div> 
+	</div>
+	
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6f2b6f088d69fc62bddfb412622c2be&libraries=clusterer"></script>
+    <script th:inline = "javascript" th:src="@{/js/house.js}"></script>
+    
+  </body>
+</html> 

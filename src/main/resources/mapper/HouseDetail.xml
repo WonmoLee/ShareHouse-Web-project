@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mysh.shareHouse.repository.HouseDetailRepository">
+	<select id="houseDetailLoad" resultType="com.mysh.shareHouse.model.HouseDetail">
+		SELECT * from house_detail where house_num = #{houseNumber}
+	</select>
+	
+	<select id="houseDetailRoomLoad" resultType="com.mysh.shareHouse.model.HouseDetailRoom">
+		SELECT * from house_detail_room where house_num = #{houseNumber}
+	</select>
+	
+	<select id="houseMapArea" resultType="com.mysh.shareHouse.model.Map">
+		SELECT * from house where houseNumber = #{houseNumber}
+	</select>
+
+</mapper>

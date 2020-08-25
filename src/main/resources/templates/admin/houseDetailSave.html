@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>하우스 디테일 등록 페이지</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br/><br/><br/><br/><br/>
+<ul>
+		<li><a href="/admin/houseDetailRoomSave"><span>하우스 디테일 룸 테이블 등록 페이지이동</span></a></li>
+</ul>
+<br/><br/>
+
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="img1">하우스번호</label>
+      <input type="text" class="form-control" id="houseNumber" name="houseNumber">
+    </div>
+    <div class="form-group">
+      <label for="img1">사진1 예: /img/d사이에하우스넘버넣으세요a.jpg</label>
+      <input type="text" class="form-control" id="img1" name="img1" value="/img/da.jpg">
+    </div>
+    <div class="form-group">
+      <label for="img2">사진2 예: /img/d124b.jpg</label>
+      <input type="text" class="form-control" id="img2" name="img2" value="/img/db.jpg">
+    </div>
+    <div class="form-group">
+      <label for="img3">사진3 예: /img/d124c.jpg</label> 
+      <input type="text" class="form-control" id="img3" name="img3" value="/img/dc.jpg">
+    </div>
+    <div class="form-group">
+      <label for="title">타이틀</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+    
+    <div class="form-group">
+      <label for="content">내용</label>
+       <textarea class="form-control" rows="6" id="content" name="content"></textarea>
+     
+    </div>
+    <div class="form-group">
+      <label for="hashTag">해쉬태그</label>
+      <input type="text" class="form-control" id="hashTag" name="hashTag">
+    </div>
+    <div class="form-group">
+      <label for="tourPoint">투어포인트</label>
+      <textarea class="form-control" rows="6" id="tourPoint" name="tourPoint"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="address">주소</label>
+      <input type="text" class="form-control" id="address" name="address">
+    </div>
+    <div class="form-group">
+      <label for="gender">여 or 남 한글자로</label>
+      <input type="text" class="form-control" id="gender" name="gender">
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="contractEndDate">지점계약종료일</label>
+      <input type="text" class="form-control" id="contractEndDate" name="contractEndDate">
+    </div>
+    <div class="form-group">
+      <label for="maxResidencePersonnel">최대거주인원</label>
+      <input type="text" class="form-control" id="maxResidencePersonnel" name="maxResidencePersonnel">
+    </div>
+    <div class="form-group">
+      <label for="houseForm">주택유형</label>
+      <input type="text" class="form-control" id="houseForm" name="houseForm">
+    </div>
+    <div class="form-group">
+      <label for="construction">구조</label>
+      <input type="text" class="form-control" id="construction" name="construction">
+    </div>
+    <div class="form-group">
+      <label for="drawing">도면  예: /img/draw124.png or .jpg</label>
+      <input type="text" class="form-control" id="drawing" name="drawing" value="/img/draw.jpg">
+    </div>
+    
+    <div class="form-group">
+      <label for="tourApply">투어신청 설명</label>
+      <textarea class="form-control" rows="6" id="tourApply" name="tourApply"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="subway">지하철</label>
+      <textarea class="form-control" rows="3" id="subway" name="subway"></textarea>
+      
+    </div>
+    <div class="form-group">
+      <label for="bus">버스</label>
+      <input type="text" class="form-control" id="bus" name="bus">
+    </div>
+    <div class="form-group">
+      <label for="univercity">대학교</label>
+      <textarea class="form-control" rows="3" id="univercity" name="univercity"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="mart">마트</label>
+      <textarea class="form-control" rows="3" id="mart" name="mart"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="facilities">편의시설</label>
+      <textarea class="form-control" rows="3" id="facilities" name="facilities"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="heal">병원</label>
+      <textarea class="form-control" rows="3" id="heal" name="heal"></textarea>
+    </div>
+    
+    
+    <button  id="btn-save" type="button" class="btn btn-primary">등록</button>
+  </form>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+<script src="/js/adminHouseDetailSave.js"></script>
+</body>
+</html>

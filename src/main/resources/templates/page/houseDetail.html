@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/houseDetail.css">
+<title>하우스 디테일</title>
+</head>
+<body>
+	<div class="detail-main-con">
+
+	<div>
+		<img th:src="${houseDetail.img2}" width="900px" height="600px">
+	</div>
+
+	<div class="detail__title">
+		<p th:text="${houseDetail.title}"></p>
+	</div>
+
+	<div class="detail__content">
+		<p th:text="${houseDetail.content}"></p>
+	</div>
+
+	<div class="detail__hashTag">
+		<p th:text="${houseDetail.hash_tag}"></p>
+	</div>
+
+	<div class="detail__tourPoint">
+		<p th:text="${houseDetail.tourPoint}"></p>
+	</div>
+
+	<div class="house-info">
+		<table>
+			<tr>
+				<th>주소</th>
+				<td th:text="${houseDetail.address}"></td>
+				<th>성별</th>
+				<td th:text="${houseDetail.gender}"></td>
+			</tr>
+			<tr>
+				<th>지점계약종료일</th>
+				<td th:text="${houseDetail.contractEndDate}"></td>
+				<th>최대거주인원</th>
+				<td th:text="${houseDetail.maxResidencePersonnel}"></td>
+			</tr>
+			<tr>
+				<th>주택유형</th>
+				<td th:text="${houseDetail.house_form}"></td>
+				<th>구조</th>
+				<td th:text="${houseDetail.construction}"></td>
+			</tr>
+		</table>
+	</div>
+	
+	
+	<img th:src="${houseDetail.drawing}" width="800px" height="900px">
+
+	<table>
+		<tr>
+			<th>이름</th>
+			<th>성별</th>
+			<th>타입</th>
+			<th>면적</th>
+			<th>보증금</th>
+			<th>월세</th>
+			<th>입주가능일</th>
+		</tr>
+		<tr th:each="houseDetailRoom : ${houseDetailRooms}">
+			<td th:text="${houseDetailRoom.roomName}"></td>
+			<td th:text="${houseDetailRoom.gender}"></td>
+			<td th:text="${houseDetailRoom.type}"></td>
+			<td th:text="${houseDetailRoom.area}"></td>
+			<td th:text="${houseDetailRoom.deposit}"></td>
+			<td th:text="${houseDetailRoom.monthly}"></td>
+			<td th:text="${houseDetailRoom.moveInDate}"></td>
+		</tr>
+	</table>
+
+	<p th:text="${houseDetail.tourApply}"></p>
+
+	<h5>서울시 서초구 서초동 기준 (예시)</h5>
+	<table>
+		<tr>
+			<th>구분</th>
+			<th>WOOZOO 쉐어하우스</th>
+			<th>원룸</th>
+			<th>오피스텔</th>
+		</tr>
+
+		<tr>
+			<td>보증금</td>
+			<td>95만원</td>
+			<td>1000만원</td>
+			<td>1000만원</td>
+		</tr>
+
+		<tr>
+			<td>임대료</td>
+			<td>39만원5천원</td>
+			<td>59만원</td>
+			<td>65만원</td>
+		</tr>
+
+		<tr>
+			<td>운영관리비</td>
+			<td>3만원</td>
+			<td>5만원</td>
+			<td>11만원</td>
+		</tr>
+
+		<tr>
+			<td>공과금</td>
+			<td>입주자간의 1/N 납부</td>
+			<td>개인 사용량에 따라 상이</td>
+			<td>개인 사용량에 따라 상이</td>
+		</tr>
+
+		<tr>
+			<td>중계수수료</td>
+			<td>없음</td>
+			<td>27.6만원 이상</td>
+			<td>30만원 이상</td>
+		</tr>
+	</table>
+
+	<input type="hidden" id="lat" th:value="${house.lat}" />
+	<input type="hidden" id="lng" th:value="${house.lng}" />
+
+	<div id="map" style="width: 750px; height: 450px;"></div>
+
+	<table>
+		<tr>
+			<th>지하철</th>
+			<th>대학교</th>
+			<th>편의시설</th>
+		</tr>
+		<tr>
+			<td th:text="${houseDetail.subway}"></td>
+			<td th:text="${houseDetail.university}"></td>
+			<td th:text="${houseDetail.facilities}"></td>
+		</tr>
+
+		<tr>
+			<th>버스</th>
+			<th>마트/편의점</th>
+			<th>병원/약국</th>
+		</tr>
+		<tr>
+			<td th:text="${houseDetail.bus}"></td>
+			<td th:text="${houseDetail.mart}"></td>
+			<td th:text="${houseDetail.heal}"></td>
+		</tr>
+	</table>
+	
+	</div>
+	
+	
+
+	<br />
+	<br />
+	<br />
+	
+	
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6f2b6f088d69fc62bddfb412622c2be"></script>
+	<script th:inline="javascript" th:src="@{/js/houseDetailMap.js}"></script>
+</body>
+</html>
