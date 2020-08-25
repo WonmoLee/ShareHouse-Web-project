@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/houseDetail.css">
+<link rel="stylesheet" type="text/css" href="/css/mysh1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>하우스 디테일</title>
 </head>
 <body>
-	<div class="detail-main-con">
+<th:block th:replace="layout/header"></th:block>
+	<section>
+	<div class="house_detail">
 
-	<div>
-		<img th:src="${houseDetail.img2}" width="900px" height="600px">
+	<div class="house_detail_img1">
+		<img th:src="${houseDetail.img2}">
 	</div>
 
-	<div class="detail__title">
+	<div class="house_detail_title">
 		<p th:text="${houseDetail.title}"></p>
 	</div>
 
@@ -25,15 +26,15 @@
 		<p th:text="${houseDetail.content}"></p>
 	</div>
 
-	<div class="detail__hashTag">
+	<div class="house_detail_tag">
 		<p th:text="${houseDetail.hash_tag}"></p>
 	</div>
 
-	<div class="detail__tourPoint">
+	<div class="house_detail_tourPoint">
 		<p th:text="${houseDetail.tourPoint}"></p>
 	</div>
 
-	<div class="house-info">
+	<div class="house_detail_table1">
 		<table>
 			<tr>
 				<th>주소</th>
@@ -56,9 +57,9 @@
 		</table>
 	</div>
 	
+	<div class="house_detail_img2"><img th:src="${houseDetail.drawing}"></div>
 	
-	<img th:src="${houseDetail.drawing}" width="800px" height="900px">
-
+	<div class="house_detail_">
 	<table>
 		<tr>
 			<th>이름</th>
@@ -79,6 +80,7 @@
 			<td th:text="${houseDetailRoom.moveInDate}"></td>
 		</tr>
 	</table>
+	</div>
 
 	<p th:text="${houseDetail.tourApply}"></p>
 
@@ -156,16 +158,13 @@
 		</tr>
 	</table>
 	
+	
+	<div>FAQ</div>
 	</div>
 	
-	
-
-	<br />
-	<br />
-	<br />
-	
-	
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6f2b6f088d69fc62bddfb412622c2be"></script>
-	<script th:inline="javascript" th:src="@{/js/houseDetailMap.js}"></script>
+	</section>
+<th:block th:replace="layout/footer"></th:block>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6f2b6f088d69fc62bddfb412622c2be"></script>
+<script th:inline="javascript" th:src="@{/js/houseDetailMap.js}"></script>
 </body>
 </html>

@@ -94,7 +94,7 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
     			}
     			
     			
-    			var mapItem = `<div class="house-map" onclick="houseDetail('${res.houseNumber}')" onclick="houseDetail('${res.houseNumber}')" onmouseover="houseArea('${res.lat}','${res.lng}')" onmouseout="houseAreaNo('${res.lat}','${res.lng}')">`;
+    			var mapItem = `<div class="house-map" onclick="houseDetail('${res.houseNumber}')" onmouseover="houseArea('${res.lat}','${res.lng}')" onmouseout="houseAreaNo('${res.lat}','${res.lng}')">`;
 				mapItem +=  `<div style="background-image: url('${res.imageTitle}'); background-size: 100%; width: 230px; height: 180px; ">`;
 				mapItem +=  `</div>`;
 				mapItem +=  `<div>`;
