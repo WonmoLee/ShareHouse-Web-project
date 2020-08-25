@@ -205,7 +205,6 @@
   font-weight: normal;
 }
 
-
 .directRent_content2_list {
   display: flex;
   justify-content: space-between;
@@ -356,7 +355,7 @@
   font-size: 25px;
   border: 1px solid;
   border-radius: 2em;
-  background-color: #E64E5D;
+  background-color: #e64e5d;
   color: rgb(255, 255, 255);
   padding: 5px 150px 5px 150px;
 }
@@ -391,6 +390,7 @@
   font-size: 20px;
 }
 
+/* 방찾기 */
 .findRoom {
   display: flex;
   justify-content: space-between;
@@ -402,11 +402,84 @@
   width: 50%;
 }
 
-.findRoom_houseList_nav {
-  position: fixed;
-}
-
 .findRoom_map {
   width: 50%;
-  height: 100%
+  height: 100%;
 }
+
+.findRoom_houseList {
+  padding-left: 100px;
+}
+
+.findRoom_houseList_nav {
+  display: flex;
+  margin-top: 50px;
+}
+
+.findRoom_houseList_nav img {
+  height: 50px;
+  margin-top: 7px;
+}
+
+.findRoom_houseList_nav input {
+  width: 55%;
+  vertical-align: top;
+  margin-top: 5px;
+  font-size: 20px;
+  padding: 15px 120px 15px 20px;
+  border-color: white;
+  background-color: #ededed;
+  border: 1px;
+  border-radius: 3em;
+}
+
+.findRoom_houseDetailList {
+  margin-top: 160px;
+  margin-right: 40px;
+}
+
+#Map-id img {
+	width: 230px;
+	height: 180px;
+}
+
+#house__con {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}	
+
+#Map-id {
+	display: flex;
+	flex-wrap: wrap;
+	height: 200px;
+	margin-top: 30px;
+}
+
+	
+#map {
+	position: fixed;
+	width: 50%;
+	height: 100%;
+	margin-left: 1000px;
+}
+
+.house-map{
+	margin-left: 20px;
+	margin-top: 20px;
+	border-radius: 1.5rem;
+	border: 1px solid #d4d4d4;
+	overflow: hidden;
+	cursor: pointer;
+	
+}
+
+.house__num__area {
+	color: #fd675a;
+	font-size: 17px;
+}
+
+.house__houseform{
+	color: #a0a0a0;
+}
+
