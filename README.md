@@ -11,16 +11,18 @@ use shareHouse;
 -user 테이블 생성-
 create table user(
 	id int auto_increment primary key,
-    username varchar(100) unique not null,
+    userName varchar(100) unique not null,
     password varchar(100) not null,
     email varchar(200) not null,
-    ph_num int not null,
-    gender char not null,
+    phNum int not null,
+    gender char,
     terms varchar(100),
     address varchar (300) not null,
-    bank_name varchar(100) not null,
-    role_type varchar(50) not null,
-    create_date timestamp
+    bankName varchar(100) not null,
+    roleType varchar(50) not null,
+    provider varchar(100),
+    providerId varchar(300),
+    createDate timestamp
 ) engine=InnoDB default charset=utf8;
 
 

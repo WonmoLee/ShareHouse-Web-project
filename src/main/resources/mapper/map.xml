@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mysh.shareHouse.repository.MapRepository">
 
-	<select id="findAll" resultType="com.mysh.shareHouse.model.Map">
-    select * from house
- 	</select>
+   <select id="findAll" resultType="com.mysh.shareHouse.model.Map">
+   select * from house
+   </select>
   
    <select id="findByMap" resultType="com.mysh.shareHouse.model.Map">
     select * from house 

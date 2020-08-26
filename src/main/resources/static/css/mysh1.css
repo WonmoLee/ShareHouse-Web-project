@@ -407,13 +407,12 @@
   height: 100%;
 }
 
-.findRoom_houseList {
-  padding-left: 100px;
-}
-
 .findRoom_houseList_nav {
   display: flex;
-  margin-top: 50px;
+  position: fixed;
+  width: 50%;
+  background-color: rgb(255, 245, 172);
+  padding: 25px 0 25px 100px;
 }
 
 .findRoom_houseList_nav img {
@@ -454,6 +453,8 @@
 	flex-wrap: wrap;
 	height: 200px;
 	margin-top: 30px;
+	padding-top: 92px;
+	padding-left: 100px;
 }
 
 	

@@ -17,13 +17,13 @@
             <b> 셰어하우스 우주</b>
           </div>
           <div>
-            <div class="email__check">
+            <div class="username__check">
               <input id="username" type="text" name="username" value="" class="text-input" placeholder=" 아이디를 입력해주세요."/>
             </div>
-            <input id="password" placeholder=" * 비밀번호 (8자리 이상)" class="text-input1" required="required" type="password" name="user[password]"/>
+            <input id="password" placeholder=" * 비밀번호 (8자리 이상)" class="text-input1" type="password" name="user[password]"/>
             <div id="signup_form"></div>
             <div id="btn__goup">
-              <button id="login_btn" class="btn1">이 정보로 로그인</button>
+              <button id="login_btn" class="btn1" onclick="javascript:location.href='/loginProc'">이 정보로 로그인</button>
               <button id="signup_btn" class="btn2" onclick="javascript:signup()">이 정보로 회원가입</button>
             </div>
           </div>

@@ -8,12 +8,19 @@ body {
   margin: 0;
 }
 
+section {
+  padding-top: 92px;
+}
+
 /* �뿤�뜑 */
 header {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid;
   border-color: rgb(217, 217, 217);
+  position: fixed;
+  width: 100%;
+  background-color: rgb(255, 245, 172);
 }
 
 header h1 {
