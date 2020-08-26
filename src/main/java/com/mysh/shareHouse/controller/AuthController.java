@@ -1,6 +1,7 @@
 package com.mysh.shareHouse.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,14 +12,18 @@ import com.mysh.shareHouse.controller.dto.CommonRespDto;
 import com.mysh.shareHouse.model.User;
 import com.mysh.shareHouse.service.UserService;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
-public class LoginSignupController {
+@RequiredArgsConstructor
+public class AuthController {
 	
-	@Autowired
+	private static final Logger log = LoggerFactory.getLogger(AuthController.class);
 	private UserService userService;
 
 	@GetMapping("/loginOrSignup")
 	public String loginOrSignup() {
+		log.info("로그인 및 회원가입 페이지 접근");
 		return "/page/loginSignup"; 
 	}
 	
@@ -30,7 +35,7 @@ public class LoginSignupController {
 	
 	@PostMapping("/signUpProc")
 	public @ResponseBody CommonRespDto<?> signUpProc(@RequestBody User user) {
-		System.out.println(user);
+		log.info("회원가입 객체정보 : " + user.toString());
 		userService.signUp(user);
 		return new CommonRespDto<String>(1, "회원가입 성공");
 	}

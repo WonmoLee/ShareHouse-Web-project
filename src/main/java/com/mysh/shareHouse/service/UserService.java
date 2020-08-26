@@ -1,17 +1,20 @@
 package com.mysh.shareHouse.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mysh.shareHouse.model.User;
 import com.mysh.shareHouse.repository.UserRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class UserService {
 	
-	@Autowired
 	private UserRepository userRepository;
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Transactional(readOnly = true)
 	public User loginProc(User user) {
@@ -21,6 +24,8 @@ public class UserService {
 	@Transactional
 	public int signUp(User user) {
 		try {
+			String encPassword = bCryptPasswordEncoder.encode(user.getPassword());
+			user.setPassword(encPassword);
 			user.setRoleType("USER");
 			userRepository.signUp(user);
 			return 1;
