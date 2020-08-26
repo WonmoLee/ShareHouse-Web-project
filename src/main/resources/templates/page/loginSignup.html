@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>셰어하우스 우주(WOOZOO)</title>
-    <link rel="stylesheet" type="text/css" href="/css/mysh3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>셰어하우스 우주(WOOZOO)</title>
+<link rel="stylesheet" type="text/css" href="/css/mysh3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
-  <body>
- <th:block th:replace="layout/header"></th:block>
+<body>
+<th:block th:replace="layout/header"></th:block>
     <main id ="login__main">
       <section class="form">
         <div class="join__box">
@@ -18,14 +18,13 @@
           </div>
           <div>
             <div class="email__check">
-              <input type="text" name="email_id" value="" class="text-input email-input"/>
-              <span class="email-text">@</span>
-              <input type="email" name="email_addr" value="" class="text-input email-input"/><br/>
+              <input id="username" type="text" name="username" value="" class="text-input" placeholder=" 아이디를 입력해주세요."/>
             </div>
-            <input placeholder="* 비밀번호 (8자리 이상)" class="text-input1" required="required" type="password" name="user[password]" id="user_password"/>
+            <input id="password" placeholder=" * 비밀번호 (8자리 이상)" class="text-input1" required="required" type="password" name="user[password]"/>
+            <div id="signup_form"></div>
             <div id="btn__goup">
-              <button class="btn1" type="submit">이 정보로 로그인</button>
-              <button class="btn2" type="submit">이 정보로 회원가입</button>
+              <button id="login_btn" class="btn1">이 정보로 로그인</button>
+              <button id="signup_btn" class="btn2" onclick="javascript:signup()">이 정보로 회원가입</button>
             </div>
           </div>
           <div class="text__notice">
@@ -44,5 +43,6 @@
         </div>
       </section>
     </main>
+    <script th:inline = "javascript" th:src="@{/js/loginSignup.js}"></script>
   </body>
 </html>

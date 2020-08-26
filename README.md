@@ -11,8 +11,9 @@ use shareHouse;
 -user 테이블 생성-
 create table user(
 	id int auto_increment primary key,
-    username varchar(100) not null,
+    username varchar(100) unique not null,
     password varchar(100) not null,
+    email varchar(200) not null,
     ph_num int not null,
     gender char not null,
     terms varchar(100),
