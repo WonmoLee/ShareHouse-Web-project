@@ -25,10 +25,10 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 	}
 	
 	// OAuth2.0 로그인시 사용
-//	public PrincipalDetails(User user, Map<String, Object> attributes) {
-//		this.user = user;
-//		this.attributes = attributes;
-//	}
+	public PrincipalDetails(User user, Map<String, Object> attributes) {
+		this.user = user;
+		this.attributes = attributes;
+	}
 	
 	@Override
 	public String getPassword() {
@@ -76,7 +76,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 	// User의 PrimaryKey
 	@Override
 	public String getName() {
-		return user.getId()+"";
+		return user.getProviderId();
 	}
 	
 }

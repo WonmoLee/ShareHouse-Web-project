@@ -7,6 +7,10 @@
 	<select id="findByUsername" resultType="com.mysh.shareHouse.model.User" >
     select * from user where userName = #{userName}
  	</select>
+ 	
+ 	<select id="findByEmail" resultType="com.mysh.shareHouse.model.User" >
+    select * from user where email= #{email}
+ 	</select>
   
    	<insert id="signUp">
    	insert into user(userName, password, email, phNum, address, bankName, roleType, provider, providerId, createDate) 

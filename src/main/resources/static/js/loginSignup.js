@@ -64,11 +64,9 @@ function loginProc() {
 				
 	}).done(function(resp) {
 			
-			if(resp.statusCode == 1) {
-				console.log(resp);
-				alert("성공적으로 로그인 되었습니다.");
-				location.href="/";
-			}
+			console.log(resp);
+			alert("성공적으로 로그인 되었습니다.");
+			location.href="/";
 			
 	}).fail(function(error) {
 		

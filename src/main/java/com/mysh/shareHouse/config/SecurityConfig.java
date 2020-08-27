@@ -19,6 +19,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
+import com.mysh.shareHouse.config.oauth.PrincipalOauth2UserService;
+
 
 //import com.mysh.shareHouse.config.oauth.PrincipalOauth2UserService;
 
@@ -31,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 	
 	@Autowired
-//	private PrincipalOauth2UserService	principalOauth2UserService;
+	private PrincipalOauth2UserService	principalOauth2UserService;
 	
 	@Bean
 	public BCryptPasswordEncoder encodePwd() {
@@ -67,8 +69,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.and()
 			.oauth2Login()
 			.loginPage("/loginOrSignup")
-			.userInfoEndpoint();
-//			.userService(principalOauth2UserService);
+			.userInfoEndpoint()
+			.userService(principalOauth2UserService);
 		
 	}
 }
