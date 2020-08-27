@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mysh.shareHouse.repository.UserRepository">
 
-	<select id="loginProc" resultType="com.mysh.shareHouse.model.User">
-    select * from user
+	<select id="findByUsername" resultType="com.mysh.shareHouse.model.User" >
+    select * from user where userName = #{userName}
  	</select>
   
    	<insert id="signUp">

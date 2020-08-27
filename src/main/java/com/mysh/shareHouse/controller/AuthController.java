@@ -19,18 +19,12 @@ import lombok.RequiredArgsConstructor;
 public class AuthController {
 	
 	private static final Logger log = LoggerFactory.getLogger(AuthController.class);
-	private UserService userService;
+	private final UserService userService;
 
 	@GetMapping("/loginOrSignup")
 	public String loginOrSignup() {
 		log.info("로그인 및 회원가입 페이지 접근");
 		return "/page/loginSignup"; 
-	}
-	
-	@GetMapping("/loginProc")
-	public String loginProc(User user) {
-		userService.loginProc(user);
-		return "index";
 	}
 	
 	@PostMapping("/signUpProc")
