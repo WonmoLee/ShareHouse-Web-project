@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,9 +21,12 @@
         </ul>
       </nav>
       <nav class="nav2">
-        <ul>
-          <li><a href="/loginOrSignup">로그인 및 회원가입</a></li>
-          <li><a href="">운영주회원가입</a></li>
+      	<ul>
+          <li sec:authorize="isAnonymous()"><a href="/loginOrSignup">로그인 및 회원가입</a></li>
+          <li sec:authorize="isAnonymous()"><a href="#">운영주회원가입</a></li>
+          <li sec:authorize="hasAuthority('USER')"><a href="/myPage{username}" sec:authentication="principal.username"></a>님 환영합니다.</li>
+          <li sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')"><a href="/adminPage">관리자 페이지</a></li>
+          <li sec:authorize="isAuthenticated()"><a href="/logout">로그아웃</a></li>
         </ul>
       </nav>
     </header>
