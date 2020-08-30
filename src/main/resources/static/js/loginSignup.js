@@ -60,13 +60,23 @@ function loginProc() {
 			url : "/loginProc", //이거 타면 시큐리티 로그인 시도 
 			data : $("#username").serialize()+"&"+$("#password").serialize(),
 			contentType : "application/x-www-form-urlencoded; charset=UTF-8",
-			dataType : "html"
+			dataType : "json"
 				
 	}).done(function(resp) {
 			
-			console.log(resp);
-			alert("성공적으로 로그인 되었습니다.");
-			location.href="/";
+			if (resp.statusCode == 1) {
+				
+				console.log(resp);
+				alert("성공적으로 로그인 되었습니다.");
+				location.href="/";
+				
+			} else {
+				
+				alert("로그인에 실패하였습니다.");
+				console.log(resp);
+				
+			}
+			
 			
 	}).fail(function(error) {
 		

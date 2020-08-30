@@ -34,4 +34,8 @@ public class AuthController {
 		return new CommonRespDto<String>(1, "회원가입 성공");
 	}
 	
+	@GetMapping("/test")
+	public @ResponseBody CommonRespDto<?> loginResp() {
+		return new CommonRespDto<String>(1, "로그인에 성공하였습니다.");
+	}
 }
