@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.formLogin()
 			.loginPage("/loginOrSignup")
 			.loginProcessingUrl("/loginProc")
-			.defaultSuccessUrl("/test")
+			.defaultSuccessUrl("/loginResp")
 			.failureHandler(new AuthenticationFailureHandler() {		
 				@Override 
 				public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
