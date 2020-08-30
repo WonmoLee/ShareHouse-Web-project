@@ -24,7 +24,7 @@ public class IndexController {
 	
 	@GetMapping({"", "/"})
 	public String index(Model model, @AuthenticationPrincipal PrincipalDetails principal) {
-		log.info("세션의 유저정보 : " + principal);
+		log.info("인증허가 유저정보 : " + principal);
 		List<Interview> itvList = itvService.findAll();
 		model.addAttribute("itvList", itvList);
 		return "index";

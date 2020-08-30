@@ -79,4 +79,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 		return user.getProviderId();
 	}
 	
+	public User getUser() {
+		return user;
+	}
 }

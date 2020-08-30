@@ -29,14 +29,12 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 	// userRequest 는 code를 받아서 accessToken을 응답 받은 객체
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+		
 		OAuth2User oAuth2User = super.loadUser(userRequest); // google의 회원 프로필 조회
-
-		// code를 통해 구성한 정보
 		log.info("userRequest clientRegistration : " + userRequest.getClientRegistration());
-		// token을 통해 응답받은 회원정보
 		log.info("oAuth2User : " + oAuth2User);
-
 		return processOAuth2User(userRequest, oAuth2User);
+		
 	}
 
 	private OAuth2User processOAuth2User(OAuth2UserRequest userRequest, OAuth2User oAuth2User) {
@@ -48,13 +46,10 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		} else if (userRequest.getClientRegistration().getRegistrationId().equals("facebook")) {
 			oAuth2UserInfo = new FaceBookUserInfo(oAuth2User.getAttributes());
 		} else {
-			System.out.println("지원하지 않는 OAuth");
+			System.out.println("지원하지 않는 OAuth2.0");
 		}
 
-		//System.out.println("oAuth2UserInfo.getProvider() : " + oAuth2UserInfo.getProvider());
-		//System.out.println("oAuth2UserInfo.getProviderId() : " + oAuth2UserInfo.getProviderId());
-		Optional<User> userOptional = 
-				userRepository.findByEmail(oAuth2UserInfo.getEmail());
+		Optional<User> userOptional = userRepository.findByEmail(oAuth2UserInfo.getEmail());
 		
 		User user;
 		if (userOptional.isPresent()) {
@@ -63,8 +58,14 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 			// user의 패스워드가 null이기 때문에 OAuth 유저는 일반적인 로그인을 할 수 없음.
 			user = User
 					.builder()
-					.userName(oAuth2UserInfo.getProvider() + "_" + oAuth2UserInfo.getProviderId())
-					.roleType("USER").provider(oAuth2UserInfo.getProvider())
+					.userName(oAuth2UserInfo.getName())
+					.password("")
+					.email(oAuth2UserInfo.getEmail())
+					.phNum(000000)
+					.address("")
+					.bankName("")
+					.roleType("USER")
+					.provider(oAuth2UserInfo.getProvider())
 					.providerId(oAuth2UserInfo.getProviderId())
 					.build();
 			userRepository.signUp(user);
