@@ -3,6 +3,7 @@ package com.mysh.shareHouse.config.auth;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,8 +21,8 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 	private Map<String, Object> attributes;
 
 	// 일반 시큐리티 로그인시 사용
-	public PrincipalDetails(User user) {
-		this.user = user;
+	public PrincipalDetails(User userEntity) {
+		this.user = userEntity;
 	}
 	
 	// OAuth2.0 로그인시 사용

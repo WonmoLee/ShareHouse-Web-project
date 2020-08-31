@@ -55,8 +55,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
 						AuthenticationException exception) throws IOException, ServletException {
 					response.setContentType("text/html; charset=utf-8"); 
-					log.info("아이디 또는 패스워드 불일치");
-					return ;
+					log.info("아이디 또는 패스워드 불일치로 로그인 제한");
+					return;
 				}
 			})
 		.and()	

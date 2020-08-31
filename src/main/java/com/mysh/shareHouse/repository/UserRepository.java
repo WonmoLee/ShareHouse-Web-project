@@ -6,8 +6,8 @@ import com.mysh.shareHouse.model.User;
 
 public interface UserRepository {
 	
-	User findByUsername(String username);
-	Optional<User> signUp(User user);
+	Optional<User> findByUsername(String username);
+	User signUp(User user);
 	Optional<User> findByEmail(String email);
 	
 }

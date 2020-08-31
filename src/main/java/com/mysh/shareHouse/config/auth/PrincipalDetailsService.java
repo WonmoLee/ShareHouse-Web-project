@@ -1,5 +1,7 @@
 package com.mysh.shareHouse.config.auth;
 
+import java.util.function.Supplier;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.mysh.shareHouse.config.handler.exception.LoginException;
 import com.mysh.shareHouse.model.User;
 import com.mysh.shareHouse.repository.UserRepository;
 
@@ -24,7 +27,13 @@ public class PrincipalDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		log.info("로그인 요청ID : " + username);
-		User userEntity = userRepository.findByUsername(username);
+		User userEntity = userRepository.findByUsername(username)
+									.orElseThrow(new Supplier<LoginException>() {
+										@Override
+										public LoginException get() {
+											return new LoginException();
+										}
+									});
 		log.info("요청ID 정보 : " + userEntity);
 		if(userEntity == null) {
 			return null;
