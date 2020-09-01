@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.mysh.shareHouse.config.handler.exception.LoginException;
@@ -25,19 +24,21 @@ public class PrincipalDetailsService implements UserDetailsService{
 	private final UserRepository userRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username)  {
 		log.info("로그인 요청ID : " + username);
-		User userEntity = userRepository.findByUsername(username)
-									.orElseThrow(new Supplier<LoginException>() {
-										@Override
-										public LoginException get() {
-											return new LoginException();
-										}
-									});
-		log.info("요청ID 정보 : " + userEntity);
+		User userEntity = null;
+		userEntity = userRepository.findByUsername(username)
+										.orElseThrow(new Supplier<LoginException>() {
+											@Override
+											public LoginException get() {
+												return new LoginException(username);
+											}
+										});
+
 		if(userEntity == null) {
 			return null;
 		} else {
+			log.info("요청ID 정보 : " + userEntity);
 			return new PrincipalDetails(userEntity);
 		}
 		
