@@ -35,7 +35,7 @@ function signupProc() {
 	}).done(function(resp) {
 		
 		if(resp.statusCode == 1) {
-			alert("회원가입이 완료되었습니다.");
+			alert(resp.message);
 			location.href="/loginOrSignup";
 		}
 		
@@ -67,7 +67,7 @@ function loginProc() {
 			if (resp.statusCode == 1) {
 				
 				console.log(resp);
-				alert("성공적으로 로그인 되었습니다.");
+				alert(resp.message);
 				location.href="/";
 				
 			} else {

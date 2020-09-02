@@ -1,8 +1,13 @@
 package com.mysh.shareHouse.controller;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,15 +32,28 @@ public class AuthController {
 		return "/page/loginSignup"; 
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@PostMapping("/signUpProc")
-	public @ResponseBody CommonRespDto<?> signUpProc(@RequestBody User user) {
+	public @ResponseBody ResponseEntity<?> signUpProc(@Valid @RequestBody User user, BindingResult bindingResult) {
 		log.info("회원가입 객체정보 : " + user.toString());
-		userService.signUp(user);
-		return new CommonRespDto<String>(1, "회원가입 성공");
+		int entityUser = userService.signUp(user);
+		
+		CommonRespDto<?> respDto = CommonRespDto.builder()
+				.statusCode(StatusCode.OK)
+				.message("회원가입에 성공하였습니다.") // 이것도 인터페이스로 만드는게 좋음
+				.data(""+entityUser)
+				.build();
+		return new ResponseEntity<CommonRespDto>(respDto, HttpStatus.CREATED);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@GetMapping("/loginResp")
-	public @ResponseBody CommonRespDto<?> loginResp() {
-		return new CommonRespDto<String>(1, "로그인에 성공하였습니다.");
+	public @ResponseBody ResponseEntity<?> loginResp() {
+		CommonRespDto<?> respDto = CommonRespDto.builder()
+				.statusCode(StatusCode.OK)
+				.message("성공적으로 로그인하였습니다.") // 이것도 인터페이스로 만드는게 좋음
+				.data("")
+				.build();
+		return new ResponseEntity<CommonRespDto>(respDto, HttpStatus.OK);
 	}
 }

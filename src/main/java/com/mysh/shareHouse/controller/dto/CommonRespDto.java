@@ -11,5 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CommonRespDto<T> {
 	private int statusCode; //1 정상 , -1 실패 , 0변경안됨
+	private String message; // 상태 메시지
 	private T data;
 }
