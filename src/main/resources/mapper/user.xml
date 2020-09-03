@@ -16,5 +16,9 @@
    	insert into user(userName, password, email, phNum, address, bankName, roleType, provider, providerId, createDate) 
    	values(#{userName}, #{password}, #{email}, #{phNum}, #{address}, #{bankName}, #{roleType}, #{provider}, #{providerId}, now())
    	</insert>
+   	
+   	<update id="oauthUserUpdate"> 
+   	update user set provider = #{provider}, providerId = #{providerId} WHERE userName = #{userName}
+   	</update>
 
 </mapper>

@@ -53,7 +53,22 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		
 		User user;
 		if (userOptional.isPresent()) {
-			user = userOptional.get().setProvider(oAuth2UserInfo.getProvider());
+			user = userOptional.get();
+			System.out.println(user);
+			user = User
+					.builder()
+					.userName(user.getUserName())
+					.password(user.getPassword())
+					.email(user.getEmail())
+					.phNum(user.getPhNum())
+					.address(user.getAddress())
+					.bankName(user.getBankName())
+					.roleType(user.getRoleType())
+					.provider(oAuth2UserInfo.getProvider())
+					.providerId(oAuth2UserInfo.getProviderId())
+					.build();
+			System.out.println(user);
+			userRepository.oauthUserUpdate(user);
 		} else {
 			// user의 패스워드가 null이기 때문에 OAuth 유저는 일반적인 로그인을 할 수 없음.
 			user = User

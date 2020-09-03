@@ -9,5 +9,7 @@ public interface UserRepository {
 	Optional<User> findByUsername(String username);
 	void signUp(User user);
 	Optional<User> findByEmail(String email);
+	void oauthUserUpdate(User user);
 	
 }
+
