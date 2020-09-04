@@ -15,6 +15,7 @@
 	<div class="house_detail">
 
 	<div class="house_detail_img1">
+	<h2 th:text="${houseDetail.house_num}">호점</h2>
 		<img th:src="${houseDetail.img2}">
 	</div>
 
@@ -59,7 +60,7 @@
 	
 	<div class="house_detail_img2"><img th:src="${houseDetail.drawing}"></div>
 	
-	<div class="house_detail_">
+	<div class="house_detail_table2">
 	<table>
 		<tr>
 			<th>이름</th>
@@ -83,8 +84,9 @@
 	</div>
 
 	<p th:text="${houseDetail.tourApply}"></p>
-
-	<h5>서울시 서초구 서초동 기준 (예시)</h5>
+	
+	<div class="house_detail_table3">
+	<h2>서울시 서초구 서초동 기준 (예시)</h2>
 	<table>
 		<tr>
 			<th>구분</th>
@@ -128,12 +130,15 @@
 			<td>30만원 이상</td>
 		</tr>
 	</table>
+	</div>
 
 	<input type="hidden" id="lat" th:value="${house.lat}" />
 	<input type="hidden" id="lng" th:value="${house.lng}" />
 
-	<div id="map" style="width: 750px; height: 450px;"></div>
+	<h2>세부정보</h2>
+	<div id="map" style="width: 1203px; height: 450px; position: static; margin-left: 0px; z-index: 0;"></div>
 
+	<div class="house_detail_table4">
 	<table>
 		<tr>
 			<th>지하철</th>
@@ -157,9 +162,8 @@
 			<td th:text="${houseDetail.heal}"></td>
 		</tr>
 	</table>
+	</div>
 	
-	
-	<div>FAQ</div>
 	</div>
 	
 	</section>

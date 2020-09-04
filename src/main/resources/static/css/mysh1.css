@@ -544,3 +544,62 @@
 	height: 700px;
 	padding: 50px 0 50px 0;
 }
+
+.house_detail_table2 {
+	padding-bottom: 30px;
+}
+
+.house_detail_table2 table {
+	display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    font-size: 15px;
+    text-align: center;
+}
+
+.house_detail_table2 table tr th, .house_detail_table2 table tr td {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	padding: 20px 50px 20px 50px;
+}
+
+.house_detail_table2 table tr th {
+	background-color: #F5F3F1;
+}
+
+.house_detail_table3 {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.house_detail_table3 table {
+	display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    font-size: 15px;
+    text-align: center;
+}
+
+.house_detail_table3 table tr th, .house_detail_table3 table tr td {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	padding: 20px 79px 20px 79px;
+}
+
+.house_detail_table3 table tr th {
+	background-color: #F5F3F1;
+}
+
+.house_detail_table4 table {
+	display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    font-size: 15px;
+    text-align: center;
+}
+
+.house_detail_table4 table tr th, .house_detail_table4 table tr td {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	padding: 20px 79px 20px 79px;
+}
