@@ -3,7 +3,6 @@ package com.mysh.shareHouse.config.auth;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-import java.util.Optional;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +13,7 @@ import com.mysh.shareHouse.model.User;
 import lombok.Data;
 
 // Authentication 객체에 저장할 수 있는 유일한 타입
+@SuppressWarnings("serial")
 @Data
 public class PrincipalDetails implements UserDetails, OAuth2User{
 

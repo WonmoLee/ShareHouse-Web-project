@@ -15,6 +15,14 @@
   background: white;
 }
 
+.section2 {
+	padding-top: 0;
+}
+
+.section3 {
+	margin-top: -130px;
+}
+
 .tab__title {
   display: grid;
   grid-template-columns: auto auto;
@@ -124,12 +132,6 @@ main section {
 }
 
 section ul {
-  padding: 6rem 0 0 0;
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-  grid-gap: 10px;
-  font-size: 25px;
   line-height: 1.9em;
 }
 .sec__title1 {
