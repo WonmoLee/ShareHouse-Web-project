@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셰어하우스 우주(WOOZOO)</title>
+    <link rel="stylesheet" type="text/css" href="/css/mysh1.css">
+</head>
+<body>
+<th:block th:replace="layout/header"></th:block>
+<section>
+	<div class="myPage">
+		<div class="myPage_title">
+			<h1>마 이 페 이 지</h1>
+		</div>
+		<div class="myPage_content">
+			<div class="myPage_content_category">
+				<p><a href="/myPageMain">내 정보</a></p>
+				<p><a href="/myPageInfoUD">회원정보수정</a></p>
+				<p><a href="/myPagePWUpdate">비밀번호 변경</a></p>
+				<p><a href="#">예약내역</a></p>
+			</div>
+			<div class="myPage_content_detail">
+				<form action="/userInfoUD" method="post">
+					<p>아이디 : <input type="text" th:value="${pricipalUser.user.userName}" name="userName"/></p>
+					<p>이메일 : <input type="email" th:value="${pricipalUser.user.email}" name="email"/></p>
+					<p>휴대전화 : <input type="number" th:value="${pricipalUser.user.phNum}" name="phNum"/></p>
+					<p>성별 : <input type="text" th:value="${pricipalUser.user.gender}" name="gender"/></p>
+					<p>주소 : <input type="text" th:value="${pricipalUser.user.address}" name="address"/></p>
+					<p>내 은행명 : <input type="text" th:value="${pricipalUser.user.bankName}" name="bankName"/></p>
+					<button type="submit">수정하기</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<th:block th:replace="layout/footer"></th:block>
+</body>
+</html>

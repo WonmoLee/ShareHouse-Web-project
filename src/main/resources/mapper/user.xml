@@ -20,5 +20,13 @@
    	<update id="oauthUserUpdate"> 
    	update user set provider = #{provider}, providerId = #{providerId} WHERE userName = #{userName}
    	</update>
+   	
+   	<update id="pwUpdateProc"> 
+   	update user set password = #{password} WHERE userName = #{userName}
+   	</update>
+   	
+   	<update id="userInfoUDProc"> 
+   	update user set userName = #{userName}, email = #{email}, phNum = #{phNum}, gender = #{gender}, terms = #{terms}, address = #{address}, bankName = #{bankName} WHERE id = #{id}
+   	</update>
 
 </mapper>

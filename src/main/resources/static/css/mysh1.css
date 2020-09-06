@@ -603,3 +603,41 @@
 	border-color: #c0c0c0;
 	padding: 20px 79px 20px 79px;
 }
+
+.myPage_title h1{
+	font-size: 40px;
+	text-align: center;
+	color: gray;
+}
+
+.myPage_title {
+	border-bottom: 1px solid;
+	border-color: #c0c0c0;
+}
+
+.myPage_content {
+	display: flex;
+}
+
+.myPage_content_category {
+	padding: 30px 50px 350px 150px;
+	border-right: 1px solid;
+	border-color: #c0c0c0;
+	font-size: 20px;
+}
+
+.myPage_content_detail {
+	padding: 30px 300px 30px 100px;
+}
+
+.myPage_content_detail table {
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.myPage_content_detail table tr th, .myPage_content_detail table tr td{
+	border: 1px solid;
+	border-color: #c0c0c0;
+	padding: 20px 79px 20px 79px;
+	text-align: left;
+}

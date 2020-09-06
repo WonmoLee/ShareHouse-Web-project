@@ -24,7 +24,7 @@
       	<ul>
           <li sec:authorize="isAnonymous()"><a href="/loginOrSignup">로그인 및 회원가입</a></li>
           <li sec:authorize="isAnonymous()"><a href="#">운영주회원가입</a></li>
-          <li sec:authorize="hasAuthority('USER')"><a href="/myPage" sec:authentication="principal.username"></a>님 환영합니다.</li>
+          <li sec:authorize="hasAuthority('USER')"><a href="/myPageMain" sec:authentication="principal.username"></a>님 환영합니다.</li>
           <li sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')"><a href="/adminPage">관리자 페이지</a></li>
           <li sec:authorize="isAuthenticated()"><a href="/logout">로그아웃</a></li>
         </ul>
