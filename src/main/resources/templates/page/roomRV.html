@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>셰어하우스 우주(WOOZOO)</title>
+<link rel="stylesheet" type="text/css" href="/css/mysh1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<th:block th:replace="layout/header"></th:block>
+	<section>
+		<div>
+				<table>
+					<tr><th>예약자</th><td sec:authentication="principal.username"></td></tr>
+					<tr><th>예약자 연락처</th><td sec:authentication="principal.user.phNum"></td></tr>
+					<tr><th>호점</th><td th:text="${houseDetail.house_num}"></td></tr>
+					<tr><th>주소</th><td th:text="${houseDetail.address}"></td></tr>
+					<tr><th>전용</th><td th:text="${houseDetail.gender}"></td></tr>
+					<tr><th>형태</th><td th:text="${houseDetail.house_form}"></td></tr>
+				</table>
+				<button type="button">예약하기</button>
+		</div>
+	</section>
+<th:block th:replace="layout/footer"></th:block>
+</body>
+</html>

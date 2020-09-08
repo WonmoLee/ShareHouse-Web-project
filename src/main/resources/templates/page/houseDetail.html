@@ -163,6 +163,10 @@
 		</tr>
 	</table>
 	</div>
+	<form action="/roomRV" method="get">
+	<input type="hidden" name="houseNumber" th:value="${houseDetail.house_num}"/>
+	<button type="submit" onclick="location.href='/roomRV'"> 예약 신청하기</button>
+	</form>
 	
 	</div>
 	
