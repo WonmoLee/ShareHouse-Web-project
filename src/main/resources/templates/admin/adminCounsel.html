@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<th:block th:replace="layout/adminHeader"></th:block>
+	<div id="layoutSidenav_content">
+		<main>
+			<br /> <br /> <br />
+
+			<div class="container">
+				<h1>상담 관리</h1>
+				<br /> <br />
+				<div>
+					<div class="col-md-3">
+						<form action="#" method="get">
+							<div class="input-group">
+								<!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+								<input class="form-control" id="system-search" name="q" placeholder="검색어를 입력하세요." required> <span class="input-group-btn">
+									<button type="submit" class="btn btn-default">
+										<i class="glyphicon glyphicon-search"></i>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
+					<br /> <br />
+					<div class="col-md-9">
+						<table class="table table-list-search">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>UserId</th>
+									<th>제목</th>
+									<th>글쓴시간</th>
+									<th>상담날짜</th>
+									<th>처리상태</th>
+									<th>답변/수정</th>
+								</tr>
+							</thead>
+							<tbody th:each="counsel : ${counsels}">
+								<tr th:if="${counsel.process} == '답변완료'">
+									<td th:text="${counsel.Id}"></td>
+									<td th:text="${counsel.userId}"></td>
+									<td th:text="${counsel.title}"></td>
+									<td th:text="${counsel.create_date}"></td>
+									<td th:text="${counsel.counsel_date}"></td>
+									<td th:text="${counsel.process}"></td>
+									<td><button class="btn btn-success" th:onclick="counselAnswer([[${counsel.Id}]])">수정</button></td>
+								</tr>
+								<tr th:unless="${counsel.process} == '답변완료'">
+									<td th:text="${counsel.Id}"></td>
+									<td th:text="${counsel.userId}"></td>
+									<td th:text="${counsel.title}"></td>
+									<td th:text="${counsel.create_date}"></td>
+									<td th:text="${counsel.counsel_date}"></td>
+									<td th:text="${counsel.process}"></td>
+									<td><button class="btn btn-info" th:onclick="counselAnswer([[${counsel.Id}]])">답변</button></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<script src="/js/adminCounsel.js"></script>
+		</main>
+		<th:block th:replace="layout/adminFooter"></th:block>

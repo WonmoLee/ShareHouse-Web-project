@@ -14,19 +14,19 @@ let index = {
 	
 	save: function(){
 		let data = {
-				houseNumber: $("#houseNumber").val(),
+				house_num: $("#houseNumber").val(),
 				img1: $("#img1").val(),
 				img2: $("#img2").val(),
 				img3: $("#img3").val(),
 				title: $("#title").val(),
 				content: $("#content").val(),
-				hashTag: $("#hashTag").val(),
+				hash_tag: $("#hashTag").val(),
 				tourPoint: $("#tourPoint").val(),
 				address: $("#address").val(),
 				gender: $("#gender").val(),
 				contractEndDate: $("#contractEndDate").val(),
 				maxResidencePersonnel: $("#maxResidencePersonnel").val(),
-				houseForm: $("#houseForm").val(),
+				house_form: $("#houseForm").val(),
 				construction: $("#construction").val(),
 				drawing: $("#drawing").val(),
 				tourApply: $("#tourApply").val(),

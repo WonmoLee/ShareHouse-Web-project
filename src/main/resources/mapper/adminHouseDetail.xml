@@ -7,14 +7,46 @@
 		INSERT INTO house_detail(house_num , img1 , img2 , img3 ,title ,content ,hash_tag, tourPoint , address ,gender ,contractEndDate ,maxResidencePersonnel ,
 		house_form ,construction ,drawing , tourApply ,  subway , bus ,university , mart , facilities ,
 		heal ,  create_date )
-		VALUES(#{houseNumber}, #{img1}, #{img2}, #{img3}, #{title}, #{content}, #{hashTag}, #{tourPoint}, #{address}
-		, #{gender}, #{contractEndDate}, #{maxResidencePersonnel}, #{houseForm}, #{construction}, #{drawing}
-		, #{tourApply}, #{subway}, #{bus}, #{univercity}, #{mart}, #{facilities}, #{heal}, now())
+		VALUES(#{house_num}, #{img1}, #{img2}, #{img3}, #{title}, #{content}, #{hash_tag}, #{tourPoint}, #{address}
+		, #{gender}, #{contractEndDate}, #{maxResidencePersonnel}, #{house_form}, #{construction}, #{drawing}
+		, #{tourApply}, #{subway}, #{bus}, #{university}, #{mart}, #{facilities}, #{heal}, now())
 	</insert>
 	
 	<insert id="HouseDeatailRoomSave">
 		INSERT INTO house_detail_room(house_num, roomName, gender, type, area , deposit, monthly, moveInDate ,create_date )
-		VALUES(#{houseNumber},#{roomName},#{gender},#{type},#{area},#{deposit},#{monthly},#{moveInDate}, now())
+		VALUES(#{house_num},#{roomName},#{gender},#{type},#{area},#{deposit},#{monthly},#{moveInDate}, now())
 	</insert>
 
+	<select id="HouseDetailSelect" resultType="com.mysh.shareHouse.model.HouseDetail">
+		SELECT * from house_detail where house_num = #{houseNumber}
+	</select>
+	
+	<update id="HouseDetailUpdate">
+ 		UPDATE house_detail SET house_num = #{house_num}, img1 = #{img1}, img2 = #{img2}, img3 = #{img3}, title = #{title}, content = #{content}
+ 		, hash_tag = #{hash_tag}, tourPoint = #{tourPoint}, address = #{address}, gender = #{gender}, contractEndDate = #{contractEndDate}, maxResidencePersonnel = #{maxResidencePersonnel}, house_form = #{house_form}
+ 		, construction = #{construction}, drawing = #{drawing}, tourApply = #{tourApply}, subway = #{subway}, bus = #{bus}, university = #{university}, mart = #{mart}, facilities = #{facilities}, heal = #{heal}, create_date = now() WHERE id = #{id}
+ 	</update>
+ 	
+ 	<delete id="HouseDetailDeleteById">
+ 		DELETE FROM house_detail WHERE id = #{id} 
+ 	</delete>
+ 	
+ 	<select id="HouseDetailRoomSelect" resultType="com.mysh.shareHouse.model.HouseDetailRoom">
+		SELECT * from house_detail_room where house_num = #{house_num} AND roomName = #{roomName}
+	</select>
+	
+	<update id="HouseDetailRoomUpdate">
+ 		UPDATE house_detail_room SET house_num = #{house_num}, roomName = #{roomName}, gender = #{gender}, type = #{type}, area = #{area}, deposit = #{deposit}
+ 		, monthly = #{monthly}, moveInDate = #{moveInDate}, create_date = now() WHERE id = #{id}
+ 	</update>
+ 	
+ 	<delete id="HouseDetailRoomDeleteById">
+ 		DELETE FROM house_detail_room WHERE id = #{id} 
+ 	</delete>
+ 	
+ 	<delete id="HouseDetailRoomDeleteByAll">
+ 		DELETE FROM house_detail_room WHERE house_num = #{house_num} 
+ 	</delete>
+ 	
+ 	
 </mapper>

@@ -12,13 +12,31 @@
 			<div class="container">
 			<br /> <br />
 			<ul>
-				<li><a href="/admin/houseSave"><span>방 찾기 페이지 테이블 등록 페이지이동</span></a></li> <br/>				
-				<li><a href="/admin/houseDetailRoomUD"><span>하우스 디테일 룸 업데이트,삭제 페이지이동</span></a></li><br/>	
+				<li><a href="/admin/houseSave"><span>방 찾기 페이지 테이블 등록 페이지이동</span></a></li> <br/>
+				<li><a href="/admin/houseDetailRoomSave"><span>하우스 디테일 룸 테이블 등록 페이지이동</span></a></li><br/>
 				<li><a href="/admin/houseDetailSave"><span>하우스 디테일 등록 페이지이동</span></a></li>
 
 			</ul>
 			<br /> <br />
+				<br />
+				<br />
+				<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+					<div class="input-group">
+						<input class="form-control" type="text" id="search__houseNumber" placeholder="하우스 넘버를 입력하세요." aria-label="Search" aria-describedby="basic-addon2" required="required"/>&emsp;&emsp;
+						<input class="form-control" type="text" id="search__houseRoom" placeholder="예) ROOM A" aria-label="Search" aria-describedby="basic-addon2" required="required"/>
+						<div class="input-group-append">
+							<button class="btn btn-primary" type="button" id="btn-search">
+								<i class="fas fa-search"></i>
+							</button>
+						</div>
+					</div>
+					
+				</form>
+				<br />
+				<br />
+			
 				<form>
+				<div class="house-detail-room-UD">
 					<div class="form-group">
 						<label for="houseNumber">하우스 넘버</label> <input type="text" class="form-control" id="houseNumber" name="houseNumber">
 					</div>
@@ -50,11 +68,11 @@
 					<div class="form-group">
 						<label for="moveInDate">입주가능일</label> <input type="text" class="form-control" id="moveInDate" name="moveInDate">
 					</div>
-
-					<button id="btn-save" type="button" class="btn btn-primary">등록</button>
+					
+					</div>
 				</form>
 				<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 			</div>
-			<script src="/js/adminHouseDetailRoom.js"></script>
+			<script src="/js/adminHouseDetailRoomUD.js"></script>
 		</main>
 		<th:block th:replace="layout/adminFooter"></th:block>

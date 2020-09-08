@@ -1,5 +1,5 @@
 
-let index = {
+let index1 = {
 		
 	init: function(){
 	
@@ -15,21 +15,16 @@ let index = {
 	
 	save: function(){
 		let data = {
-				house_num: $("#houseNumber").val(),
-				roomName: $("#roomName").val(),
-				gender: $("#gender").val(),
 				type: $("#type").val(),
-				area: $("#area").val(),
-				deposit: $("#deposit").val(),
-				monthly: $("#monthly").val(),
-				moveInDate: $("#moveInDate").val()
+				title: $("#title").val(),
+				content: $("#content").val(),
 		};
 		
 		console.log(data);
 		
 		$.ajax({
 			type: "POST",
-			url: "/admin/houseDetailRoom",
+			url: "/admin/houseFaq",
 			data: JSON.stringify(data), // json 으로 바꿔줌
 			contentType: "application/json; charset=utf-8", 
 			dataType: "json"
@@ -37,13 +32,13 @@ let index = {
 		}).done(function(resp){
 			 console.log(resp); 
 				alert("등록 성공");
-				location.href="/admin/houseDetailRoomSave";
+				location.href="/admin/houseFaqSave";
 		}).fail(function(error){
 			alert("등록 실패");
 			console.log(error);
 		})
 	}
-
+	
 }
 
-index.init();
+index1.init();

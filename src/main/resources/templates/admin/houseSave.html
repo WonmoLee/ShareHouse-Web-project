@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<th:block th:replace="layout/adminHeader"></th:block>
+		<div id="layoutSidenav_content">
+			<main>
+				<br /><br /><br />
+			
+				<div class="container">
+				<br />
+				<br />
+				<ul>
+					<li><a href="/admin/houseUD"><span>방 찾기 업데이트,삭제 페이지이동</span></a></li><br />
+					<li><a href="/admin/houseDetailSave"><span>하우스 디테일 등록 페이지이동</span></a></li>
+				</ul>
+				<br />
+				<br />
+
+					<form>
+						<div class="form-group">
+							<label for="discountType">할인 유무</label> <input type="text" class="form-control" id="discountType" name="discountType" maxlength=1 placeholder="Y or N 로 적으세요. ">
+						</div>
+						<div class="form-group">
+							<label for="img1">이미지 타이틀</label> <input type="text" class="form-control" id="imageTitle" name="imageTitle">
+						</div>
+						<div class="form-group">
+							<label for="img1">주변역</label> <input type="text" class="form-control" id="nearStation" name="nearStation">
+						</div>
+						<div class="form-group">
+							<label for="img1">하우스번호</label> <input type="text" class="form-control" id="houseNumber" name="houseNumber">
+						</div>
+				
+						<div class="form-group">
+							<label for="title">lat</label> <input type="text" class="form-control" id="lat" name="lat">
+						</div>
+						<div class="form-group">
+							<label for="title">lng</label> <input type="text" class="form-control" id="lng" name="lng">
+						</div>
+
+						<div class="form-group">
+							<label for="hashTag">지역(무슨 구 인지)</label> <input type="text" class="form-control" id="area" name="area" >
+						</div>
+						
+						<div class="form-group">
+							<label for="genderType">성별 (여 or 남으로 적으세요.)</label> <input type="text" class="form-control" maxlength=1 id="genderType" name="genderType">
+						</div>
+						<div class="form-group">
+							<label for="gender">예약정보 (예 or 신 으로 적으세요.)</label> <input type="text" class="form-control" maxlength=1 id="reservation" name="reservation">
+						</div>
+
+						<div class="form-group">
+							<label for="houseForm">주거형태 (ex 빌라)</label> <input type="text" class="form-control" id="houseForm" name="houseForm">
+						</div>
+						
+						<button id="btn-save" type="button" class="btn btn-primary">등록</button>
+					</form>
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<script src="/js/adminHouseSave.js"></script>
+			</main>
+			<th:block th:replace="layout/adminFooter"></th:block>

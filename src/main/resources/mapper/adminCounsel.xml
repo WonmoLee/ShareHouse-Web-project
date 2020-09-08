@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mysh.shareHouse.repository.AdminRepository">
+
+	<select id="CounselSelectAll" resultType="com.mysh.shareHouse.model.Counsel">
+		SELECT * from counsel 
+	</select>
+	
+	<select id="CounselSelectById" resultType="com.mysh.shareHouse.model.Counsel">
+		SELECT * from counsel WHERE id = #{id}
+	</select>
+	
+	<update id="CounselAnswerUpdate">
+ 		UPDATE counsel SET  title = #{title}, content = #{content}, answer = #{answer}
+ 		, process = #{process} ,counsel_date = now() WHERE id = #{id}
+ 	</update>
+ 	
+ 	<delete id="CounselAnswerDeleteById">
+ 		DELETE FROM counsel WHERE id = #{id} 
+ 	</delete>
+		
+</mapper>

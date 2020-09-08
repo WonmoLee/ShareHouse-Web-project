@@ -94,8 +94,14 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
     			}
     			
     			
-    			var mapItem = `<div class="house-map" onclick="houseDetail('${res.houseNumber}')" onmouseover="houseArea('${res.lat}','${res.lng}')" onmouseout="houseAreaNo('${res.lat}','${res.lng}')">`;
-				mapItem +=  `<div style="background-image: url('${res.imageTitle}'); background-size: 100%; width: 230px; height: 180px; ">`;
+    			var mapItem = `<div class="house-map" onclick="houseDetail('${res.houseNumber}')" onclick="houseDetail('${res.houseNumber}')" onmouseover="houseArea('${res.lat}','${res.lng}')" onmouseout="houseAreaNo('${res.lat}','${res.lng}')">`;
+    			mapItem +=  `<div class="house-map-back" style="background-image: url('${res.imageTitle}'); background-size: 100%; width: 230px; height: 180px; position: relative;  ">`;
+				mapItem +=  `<div class="house-map-discount">`;
+				mapItem +=  `할인중`;
+				mapItem +=  `</div>`;
+				mapItem +=  `<div class="house-map-woozoo">`;
+				mapItem +=  `우주하우스`;
+				mapItem +=  `</div>`;
 				mapItem +=  `</div>`;
 				mapItem +=  `<div>`;
 				mapItem +=  `<p><span class="house__num__area">&emsp;${res.houseNumber}호점(${res.area})</span></p>`;
@@ -160,9 +166,14 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
 				reservation = '신청가능';
 			}
 			
-			
 				var mapItem = `<div class="house-map" onclick="houseDetail('${res.houseNumber}')" onmouseover="houseArea('${res.lat}','${res.lng}')" onmouseout="houseAreaNo('${res.lat}','${res.lng}')">`;
-				mapItem +=  `<div style="background-image: url('${res.imageTitle}'); background-size: 100%; width: 230px; height: 180px; ">`;
+				mapItem +=  `<div class="house-map-back" style="background-image: url('${res.imageTitle}'); background-size: 100%; width: 230px; height: 180px; position: relative;  ">`;
+				mapItem +=  `<div class="house-map-discount">`;
+				mapItem +=  `할인중`;
+				mapItem +=  `</div>`;
+				mapItem +=  `<div class="house-map-woozoo">`;
+				mapItem +=  `우주하우스`;
+				mapItem +=  `</div>`;
 				mapItem +=  `</div>`;
 				mapItem +=  `<div>`;
 				mapItem +=  `<p><span class="house__num__area">&emsp;${res.houseNumber}호점(${res.area})</span></p>`;
@@ -172,10 +183,8 @@ var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표�
 				
 				return mapItem;
     			
-			
 		} 
 	
-		
 		function clusHouse(house){
 		
 			var markers = $(house).map(function(i, position) {

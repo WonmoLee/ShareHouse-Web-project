@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mysh.shareHouse.repository.AdminRepository">
+	<insert id="HouseSave">
+		INSERT INTO house(discountType, imageTitle, nearStation, houseNumber, lat , lng, area, genderType, reservation, houseForm,create_date )
+		VALUES(#{discountType},#{imageTitle},#{nearStation},#{houseNumber},#{lat},#{lng},#{area},#{genderType},#{reservation}, #{houseForm}, now())
+	</insert>
+	
+	<select id="HouseSelect" resultType="com.mysh.shareHouse.model.Map">
+		SELECT * from house where houseNumber = #{houseNumber}
+	</select>
+	
+	<update id="HouseUpdate">
+ 		UPDATE house SET discountType = #{discountType}, imageTitle = #{imageTitle}, nearStation = #{nearStation}, houseNumber = #{houseNumber}, lat = #{lat}, lng = #{lng}
+ 		, area = #{area}, genderType = #{genderType}, reservation = #{reservation}, houseForm = #{houseForm}, create_date = now() WHERE id = #{id}
+ 	</update>
+ 	
+ 	<delete id="HouseDeleteById">
+ 		DELETE FROM house WHERE id = #{id} 
+ 	</delete>
+	
+</mapper>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<th:block th:replace="layout/adminHeader"></th:block>
+	<div id="layoutSidenav_content">
+		<main>
+			
+		
+			<br /> <br /> <br />
+
+			<div class="container">
+			<h1>탈퇴 관리</h1>
+				<br />
+				<br />
+				<div class="col-md-3">
+					<form action="#" method="get">
+						<div class="input-group">
+							<!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+							<input class="form-control" id="system-search" name="q" placeholder="검색어를 입력하세요." required> <span class="input-group-btn">
+								<button type="submit" class="btn btn-default">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</span>
+						</div>
+					</form>
+				</div>
+				<br /> <br />
+				<div class="col-md-9">
+					<table class="table table-list-search">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>UserId</th>
+								<th>유저이름</th>
+								<th>휴대폰 번호</th>
+								<th>요청날짜</th>
+								<th>취소/탈퇴</th>
+							</tr>
+						</thead>
+						<tbody th:each="Secession : ${Secessions}">
+							<tr>
+								<td th:text="${Secession.Id}"></td>
+								<td th:text="${Secession.userId}"></td>
+								<td th:text="${Secession.username}"></td>
+								<td th:text="${Secession.phone_number}"></td>
+								<td th:text="${Secession.create_date}"></td>
+								<td><button class="btn btn-warning" th:onclick="secessionDelete([[${Secession.userId}]])">탈퇴</button></td>
+								<td><button class="btn btn-danger" th:onclick="secessionCancel([[${Secession.userId}]])">취소</button></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<br /> <br /> <br /> <br /> <br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+			</div>
+			<script src="/js/adminUserSecession.js"></script>
+		</main>
+		<th:block th:replace="layout/adminFooter"></th:block>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<th:block th:replace="layout/adminHeader"></th:block>
+	<div id="layoutSidenav_content">
+		<main>
+			<br /> <br /> <br />
+
+			<div class="container">
+				<div class="form-group">
+					<input type="hidden" class="form-control" id="id" name="id" th:value="${counsel.id}">
+				</div>
+				<div class="form-group">
+					<input type="hidden" class="form-control" id="userId" name="userId" th:value="${counsel.userId}">
+				</div>
+				<div class="form-group">
+					<label for="title">글쓴 시간</label> <input type="text" class="form-control" id="create_date" name="create_date" th:value="${counsel.create_date}" readonly="readonly">
+				</div>
+				<div class="form-group">
+					<label for="title">제목</label> <input type="text" class="form-control" id="title" name="title" th:value="${counsel.title}" readonly="readonly">
+				</div>
+
+				<div class="form-group">
+					<label for="content">내용</label>
+					<textarea class="form-control" rows="9" id="content" name="content" th:text="${counsel.content}" readonly="readonly"></textarea>
+
+				</div>
+				
+				<div class="form-group">
+					<label for="content">답변</label>
+					<textarea class="form-control" rows="9" id="answer" name="answer" th:text="${counsel.answer}"></textarea>
+				</div>
+
+				
+				<button id="btn-update" type="button" class="btn btn-warning" onclick="answerUpdate()">수정</button>&emsp;&emsp;
+				<button id="btn-delete" type="button" class="btn btn-danger" onclick="answerDelete()">삭제</button><br /> <br /> <br />
+			</div>
+			<script src="/js/adminCounsel.js"></script>
+		</main>
+		<th:block th:replace="layout/adminFooter"></th:block>
