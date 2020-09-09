@@ -110,6 +110,17 @@ create table house_detail_room (
   PRIMARY KEY (id)
 ) engine=InnoDB AUTO_INCREMENT=438 default charset=utf8;
 
+create table counsel(
+   id int auto_increment primary key,
+    userId int,
+    title BLOB,
+    content BLOB,
+    answer BLOB,
+    process varchar(100),
+    counsel_date timestamp,
+    create_date timestamp
+) engine=InnoDB default charset=utf8;
+
 
 -테이블 삭제-
 drop table interview;
