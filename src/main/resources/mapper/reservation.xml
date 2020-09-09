@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mysh.shareHouse.repository.ReservationRepository">
+
+	<insert id="rvSignup">
+	insert into reservation(userName, phNum, houseNum, createDate) values(#{userName}, #{phNum}, #{houseNum}, now())
+	</insert>
+
+</mapper>  

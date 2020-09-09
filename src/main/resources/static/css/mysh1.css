@@ -416,9 +416,10 @@
 .findRoom_houseList_nav {
   display: flex;
   position: fixed;
-  width: 50%;
-  background-color: rgb(255, 245, 172);
-  padding: 25px 0 25px 100px;
+  width: 46%;
+  background-color: #ffffff;
+  padding: 25px 0 25px 120px;
+  z-index: 99;
 }
 
 .findRoom_houseList_nav img {
@@ -532,6 +533,19 @@
 	margin: 50px 350px 50px 350px;
 }
 
+.house_number {
+	display: flex;
+}
+
+.house_number h2 {
+	font-size: 30px;
+}
+
+.house_number p {
+	font-size: 22px;
+	margin: 30px 0 0 10px;
+}
+
 .house_detail_img1 img {
 	width: 100%;
 	height: 600px;
@@ -640,6 +654,51 @@
 	padding: 20px 79px 20px 79px;
 }
 
+.rv__button {
+	margin-top: 35px;
+	width: 100%;
+	height: 70px;
+	font-size: 30px;
+	background-color: pink;
+}
+
+.roomRVProc {
+	margin: 50px 0 50px 0;	
+	text-align: center;
+}
+
+.roomRVProc h1 {
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 40px;
+	color: gray;
+}
+
+.roomRVProc table{
+	display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    font-size: 15px;
+    text-align: center;
+}
+
+.roomRVProc table tr th, .roomRVProc table tr td {
+	border: 1px solid;
+	border-color: #c0c0c0;
+	padding: 20px 79px 20px 79px;
+}
+
+.roomRVProc button {
+	margin: 30px 10px 0 10px;
+	width: 13.9%;
+	font-size: 20px;
+	height: 52px;
+}
+
+.rv__buttonProc {
+	background-color: pink;
+}
+
 .myPage_title h1{
 	font-size: 40px;
 	text-align: center;
@@ -676,4 +735,17 @@
 	border-color: #c0c0c0;
 	padding: 20px 79px 20px 79px;
 	text-align: left;
+}
+
+.rvConfirm__section {
+	text-align: center;
+	margin: 260px 0 204px 0;
+	font-style: italic;
+}
+
+.rvConfirm__section button {
+	margin-top: 40px;
+	width: 25%;
+	height: 50px;
+	font-size: 20px;
 }

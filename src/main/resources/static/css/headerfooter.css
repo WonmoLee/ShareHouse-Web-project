@@ -20,7 +20,7 @@ header {
   border-color: rgb(217, 217, 217);
   position: fixed;
   width: 100%;
-  background-color: rgb(255, 245, 172);
+  background-color: rgb(255, 255, 255);
   z-index: 10;
 }
 

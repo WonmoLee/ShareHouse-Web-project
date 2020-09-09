@@ -11,7 +11,8 @@
 <body>
 <th:block th:replace="layout/header"></th:block>
 	<section>
-		<div>
+		<div class="roomRVProc">
+			<h1>입주신청정보</h1>
 				<table>
 					<tr><th>예약자</th><td sec:authentication="principal.username"></td></tr>
 					<tr><th>예약자 연락처</th><td sec:authentication="principal.user.phNum"></td></tr>
@@ -20,7 +21,10 @@
 					<tr><th>전용</th><td th:text="${houseDetail.gender}"></td></tr>
 					<tr><th>형태</th><td th:text="${houseDetail.house_form}"></td></tr>
 				</table>
-				<button type="button">예약하기</button>
+				<form action="/rvProc" method="post">
+					<input type="hidden" th:value="${houseDetail.house_num}" name="houseNum">
+					<button class="rv__buttonProc" type="submit">신청하기</button><button onclick="history.back()">돌아가기</button>
+				</form>
 		</div>
 	</section>
 <th:block th:replace="layout/footer"></th:block>
